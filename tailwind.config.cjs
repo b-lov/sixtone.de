@@ -5,7 +5,11 @@ const config = {
     extend: {}
   },
 
-  plugins: []
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio')
+  ]
 };
 
 module.exports = config;
