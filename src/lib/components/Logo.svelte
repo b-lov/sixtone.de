@@ -1,5 +1,5 @@
 <script lang="ts">
-  const src: string = 'logos/sixtone.png';
+  const src: string = 'logos/sixtone.svg';
 </script>
 
-<img {src} alt="Logo" class="h-14" />
+<img {src} alt="Logo" class="h-full" />

@@ -1,7 +1,9 @@
-<div class="indicator">
-  <span />
-  <span />
-  <span />
+<div id="wrapper" class="h-16">
+  <div class="indicator">
+    <span />
+    <span />
+    <span />
+  </div>
 </div>
 
 <style lang="postcss">

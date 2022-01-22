@@ -1,14 +1,18 @@
 <script lang="ts">
   import ScrollIndicator from '$lib/components/ScrollIndicator.svelte';
-
-  const bgImage: string = 'millerbg.jpg';
 </script>
 
 <div
-  class="pt-64 h-screen bg-[url('/images/millerbg.jpg')] bg-cover bg-center flex items-center justify-center flex-col gap-32"
+  id="hero_wrapper"
+  class="h-screen bg-[url('/images/bg1.jpg')] bg-cover bg-right bg-neutral-800
+    bg-blend-multiply bg-opacity-80 flex items-center justify-between flex-col p-8"
 >
-  <img src="/logos/sixtone.png" alt="" class="absolute top-16 opacity-5 w-full" />
+  <div class="absolute h-full w-full top-0 overflow-hidden">
+    <img id="stamp" src="/logos/sixtone.svg" alt="" class="opacity-10 w-full" />
+  </div>
+  <div id="dummy" />
   <div
+    id="caption"
     class="flex flex-col items-end gap-4 tracking-[.25em] font-oswald text-4xl uppercase text-amber-600"
   >
     <div class="flex gap-4">
