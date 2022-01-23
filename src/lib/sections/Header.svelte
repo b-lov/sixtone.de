@@ -1,9 +1,10 @@
 <script lang="ts">
-  import Hamburger from '$lib/components/Hamburger.svelte';
+  import NavButton from '$lib/components/NavButton.svelte';
   import Icon from '$lib/components/Icon.svelte';
   import Logo from '$lib/components/Logo.svelte';
 
   let y: number;
+  export let navMenu: boolean;
 </script>
 
 <svelte:window bind:scrollY={y} />
@@ -14,5 +15,5 @@
 >
   <Icon lnr-magnifier />
   <Logo />
-  <Hamburger />
+  <NavButton bind:pressed={navMenu} />
 </header>

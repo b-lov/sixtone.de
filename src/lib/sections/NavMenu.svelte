@@ -1,7 +1,7 @@
 <script lang="ts">
-  let open: boolean = false;
+  export let open: boolean;
 </script>
 
 {#if open}
-  <div class="fixed bg-black w-screen h-screen z-10 bg-opacity-80">blablabla</div>
+  <div class="fixed bg-black w-screen h-screen bg-opacity-80 z-10 text-white">blablabla</div>
 {/if}
