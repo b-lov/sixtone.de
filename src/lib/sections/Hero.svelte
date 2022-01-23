@@ -7,7 +7,7 @@
   class="h-screen bg-[url('/images/bg1.jpg')] bg-cover bg-right bg-neutral-800
     bg-blend-multiply bg-opacity-80 flex items-center justify-between flex-col p-8"
 >
-  <div class="absolute h-full w-full top-0 overflow-hidden">
+  <div class="absolute h-full w-full top-0 overflow-hidden flex justify-center items-center">
     <img id="stamp" src="/logos/sixtone.svg" alt="" class="opacity-10 w-full" />
   </div>
   <div id="dummy" />
