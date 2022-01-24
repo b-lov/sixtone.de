@@ -1,6 +1,7 @@
 <script lang="ts">
   import { fly } from 'svelte/transition';
   import { pageSections } from '$lib/stores';
+  import NavMenuLink from '$lib/components/NavMenuLink.svelte';
 
   export let open: boolean;
   let clientWidth: number;
@@ -9,14 +10,13 @@
 {#if open}
   <div
     bind:clientWidth
-    transition:fly={{ x: clientWidth }}
-    class="flex justify-end items-center fixed bg-black right-0 h-full bg-opacity-80 z-10 text-white"
+    transition:fly={{ x: 200 }}
+    class="flex justify-end items-center fixed bg-black/70 right-0 h-full z-10"
   >
-    <div class="flex flex-col items-end px-8 gap-2">
+    <div class="flex flex-col items-end px-12 gap-2">
+      <NavMenuLink section="Home" />
       {#each $pageSections as section}
-        <div class="text-3xl font-bold tracking-widest">
-          {section}
-        </div>
+        <NavMenuLink {section} />
       {/each}
     </div>
   </div>

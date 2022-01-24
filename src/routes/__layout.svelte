@@ -4,7 +4,7 @@
   import NavMenu from '$lib/sections/NavMenu.svelte';
   import '../app.css';
 
-  // let navMenu: boolean = false;
+  // let navMenu: boolean;
   let navMenu: boolean = true;
 </script>
 

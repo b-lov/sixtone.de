@@ -6,7 +6,7 @@ export const pageSections = readable([
   'Sounds',
   'Gallerie',
   'Videos',
-  'Rezensionen',
+  'Feedback',
   'News',
   'Kontakt'
 ]);
