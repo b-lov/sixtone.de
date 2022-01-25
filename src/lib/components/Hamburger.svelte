@@ -32,6 +32,7 @@
     transform: translate(6px, 3.5px) rotate(-45deg);
   }
   .pressed:hover {
-    transform: scale(1.2);
+    transform: scale(1.25);
+    transition-duration: 200ms;
   }
 </style>

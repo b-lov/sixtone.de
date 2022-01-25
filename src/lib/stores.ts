@@ -1,10 +1,10 @@
 import { readable } from 'svelte/store';
 
 export const pageSections = readable([
-  'Team',
+  'Mitglieder',
   'Events',
   'Sounds',
-  'Gallerie',
+  'Fotos',
   'Videos',
   'Feedback',
   'News',

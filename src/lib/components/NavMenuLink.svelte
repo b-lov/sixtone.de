@@ -18,7 +18,7 @@
   {#if underline}
     <span
       class="w-full h-0.5 bg-amber-600 absolute block"
-      in:fly={{ x: -30 }}
+      in:fly={{ x: -30, duration: 150 }}
       out:fly={{ x: 30 }}
     />
   {/if}
