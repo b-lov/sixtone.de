@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ScrollIndicator from '$lib/components/ScrollIndicator.svelte';
+  import ScrollIndicator from '$lib/components/pageSections/Home/ScrollIndicator.svelte';
 </script>
 
 <div
