@@ -1,2 +1,11 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+  import Hero from '$lib/sections/Hero.svelte';
+  import { pageSections } from '$lib/stores';
+</script>
+
+<Hero />
+{#each $pageSections as section}
+  <div id={section} class="h-screen  flex items-center justify-center">
+    <h1 class="font-oswald text-amber-600 text-6xl">{section}</h1>
+  </div>
+{/each}
