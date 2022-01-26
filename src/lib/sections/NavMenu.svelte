@@ -4,7 +4,7 @@
   import NavMenuLink from '$lib/components/NavMenuLink.svelte';
   import CurrentSectionChecker from '$lib/components/CurrentSectionChecker.svelte';
 
-  export let open: boolean;
+  let open: boolean = true;
 </script>
 
 {#if open}

@@ -1,6 +1,6 @@
 <script lang="ts">
   let hovering: boolean;
-  export let pressed: boolean = false;
+  let pressed: boolean = false;
 </script>
 
 <div
