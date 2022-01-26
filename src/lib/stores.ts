@@ -1,4 +1,4 @@
-import { readable } from 'svelte/store';
+import { readable, writable } from 'svelte/store';
 
 export const pageSections = readable([
   'Mitglieder',
@@ -10,3 +10,5 @@ export const pageSections = readable([
   'News',
   'Kontakt'
 ]);
+
+export const navMenuOpen = writable(false);

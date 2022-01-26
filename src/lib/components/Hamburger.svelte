@@ -1,14 +1,20 @@
 <script lang="ts">
+  import { navMenuOpen } from '$lib/stores';
   let hovering: boolean;
-  export let pressed: boolean = false;
+  const toggleMenu = () => {
+    navMenuOpen.update((n) => {
+      return (n = !n);
+    });
+  };
 </script>
 
 <div
-  class="cursor-pointer w-10 h-8 flex flex-col justify-around items-end transition-all "
-  class:pressed
+  id="Hamburger"
+  class="cursor-pointer w-10 h-8 flex flex-col justify-around items-end transition-all"
+  class:pressed={$navMenuOpen}
   on:mouseenter={() => (hovering = true)}
   on:mouseleave={() => (hovering = false)}
-  on:click={() => (pressed = !pressed)}
+  on:click={() => toggleMenu()}
 >
   <span class={hovering ? 'w-full' : 'w-5/6'} />
   <span class={hovering ? 'w-full' : 'w-3/5'} />
