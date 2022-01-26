@@ -2,7 +2,7 @@ import { get } from 'svelte/store';
 import { pageSections } from '$lib/stores';
 
 export const getSectionsBoundaries = (): { name: string; top: number; bottom: number }[] => {
-  return [...get(pageSections), 'Home'].map((name) => {
+  return get(pageSections).map((name) => {
     const offset = window.scrollY - window.innerHeight / 3;
     let { top, bottom } = document.getElementById(name).getBoundingClientRect();
     (top += offset), (bottom += offset);

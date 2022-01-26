@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Footer from '$lib/sections/Footer.svelte';
-  import Header from '$lib/sections/Header.svelte';
-  import NavMenu from '$lib/sections/NavMenu.svelte';
+  import Footer from '$lib/components/Footer.svelte';
+  import Header from '$lib/components/Header/_Header.svelte';
+  import NavMenu from '$lib/components/NavMenu/_NavMenu.svelte';
   import '../app.css';
 </script>
 
