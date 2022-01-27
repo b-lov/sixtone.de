@@ -3,16 +3,18 @@
   export let section: string;
   let underline: boolean;
   export let flyDelay: number;
+  export let accent: boolean;
 </script>
 
 <button
-  in:fly={{ x: 200, delay: flyDelay, opacity: 1 }}
+  in:fly={{ x: 300, delay: flyDelay, opacity: 1 }}
   on:click={() => {
     document.getElementById(section).scrollIntoView({
       behavior: 'smooth'
     });
   }}
-  class="relative text-3xl font-bold tracking-widest text-white"
+  class="relative text-3xl font-bold tracking-widest transition-all
+    {accent ? 'text-amber-600' : 'text-white'}"
   on:mouseenter={() => (underline = true)}
   on:mouseleave={() => (underline = false)}
 >

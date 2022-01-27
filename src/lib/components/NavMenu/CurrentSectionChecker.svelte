@@ -4,10 +4,10 @@
 
   let sectionsBoundaries: { name: string; top: number; bottom: number }[];
   let scrollY: number;
+  export let currentSection: string;
 
   onMount(() => (sectionsBoundaries = getSectionsBoundaries()));
-
-  $: if (sectionsBoundaries) console.log(getCurrentSectionId(scrollY, sectionsBoundaries));
+  $: sectionsBoundaries && (currentSection = getCurrentSectionId(scrollY, sectionsBoundaries));
 </script>
 
 <svelte:window bind:scrollY on:resize={() => (sectionsBoundaries = getSectionsBoundaries())} />
