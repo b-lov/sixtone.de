@@ -1,3 +1,3 @@
-<div class="flex justify-center p-4">
-  <span class="text-neutral-500">Sixtone 2021 All Rights Reserved</span>
+<div class="flex justify-center p-4 bg-neutral-900">
+  <span class="text-neutral-500">Copyright © 2022 Sixtone</span>
 </div>
