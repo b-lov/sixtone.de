@@ -14,9 +14,9 @@
     transition:fly={{ x: 200 }}
     class="flex justify-end items-center fixed bg-black/70 right-0 h-full z-10"
   >
-    <div in:fly={{ x: 200, delay: 200 }} class="flex flex-col items-end px-12 gap-2">
-      {#each $pageSections as section}
-        <NavMenuLink {section} />
+    <div class="text-white flex flex-col items-start px-12 gap-2">
+      {#each $pageSections as section, i}
+        <NavMenuLink {section} flyDelay={i * 50} />
       {/each}
     </div>
   </div>

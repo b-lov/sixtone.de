@@ -2,9 +2,11 @@
   import { fly } from 'svelte/transition';
   export let section: string;
   let underline: boolean;
+  export let flyDelay: number;
 </script>
 
 <button
+  in:fly={{ x: 200, delay: flyDelay, opacity: 1 }}
   on:click={() => {
     document.getElementById(section).scrollIntoView({
       behavior: 'smooth'
