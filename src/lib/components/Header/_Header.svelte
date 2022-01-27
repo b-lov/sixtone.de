@@ -3,6 +3,7 @@
   import Hamburger from './Hamburger.svelte';
   import Icon from '../Icon.svelte';
   import Logo from './Logo.svelte';
+  import SocialMediaIcons from './SocialMediaIcons.svelte';
 
   let scrollY: number;
 </script>
@@ -15,8 +16,13 @@
       fixed bg-neutral-800 w-full flex items-center justify-between px-6 z-10
       transition-all duration-300"
   >
-    <Icon lnr-magnifier />
+    <div class="flex flex-row gap-10 grow basis-0">
+      <Icon name="search" />
+      <SocialMediaIcons />
+    </div>
     <Logo />
-    <Hamburger />
+    <div class="flex justify-end grow basis-0">
+      <Hamburger />
+    </div>
   </header>
 {/if}

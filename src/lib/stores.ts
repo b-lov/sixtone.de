@@ -12,4 +12,4 @@ export const pageSections = readable([
   'Kontakt'
 ]);
 
-export const navMenuOpen = writable(true);
+export const navMenuOpen = writable(false);
