@@ -13,7 +13,7 @@
   <div id="dummy" />
   <div
     id="caption"
-    class="flex flex-col items-end gap-4 tracking-[.25em] font-oswald text-4xl uppercase text-amber-600"
+    class="flex flex-col items-end gap-4 tracking-[.25em] font-oswald text-4xl uppercase text-accent"
   >
     <div class="flex gap-4">
       <span class="font-bold">music</span>

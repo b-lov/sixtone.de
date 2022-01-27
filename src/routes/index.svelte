@@ -8,7 +8,7 @@
     <Home />
   {:else}
     <div id={section} class="h-screen flex items-center justify-center {i % 2 && 'bg-neutral-900'}">
-      <h1 class="font-oswald text-amber-600 text-6xl ">{section}</h1>
+      <h1 class="font-oswald text-accent text-6xl ">{section}</h1>
     </div>
   {/if}
 {/each}

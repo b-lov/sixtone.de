@@ -14,14 +14,14 @@
     });
   }}
   class="relative text-3xl font-bold tracking-widest transition-all
-    {accent ? 'text-amber-600' : 'text-white'}"
+    {accent ? 'text-accent' : 'text-white'}"
   on:mouseenter={() => (underline = true)}
   on:mouseleave={() => (underline = false)}
 >
   {section}
   {#if underline}
     <span
-      class="w-full h-0.5 bg-amber-600 absolute block"
+      class="w-full h-0.5 bg-accent absolute block"
       in:fly={{ x: -30, duration: 150 }}
       out:fly={{ x: 30 }}
     />

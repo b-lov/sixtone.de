@@ -5,6 +5,9 @@ const config = {
     extend: {
       fontFamily: {
         oswald: ['Oswald']
+      },
+      colors: {
+        accent: '#d97706'
       }
     }
   },
