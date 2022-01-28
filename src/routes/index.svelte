@@ -9,8 +9,8 @@
   {:else}
     <div id={section} class="h-screen flex  justify-end  {i % 2 && 'bg-neutral-900'}">
       <h1
-        class="text-white text-6xl uppercase tracking-wide font-bold
-          transition-all duration-300 mt-8 {$navMenuOpen ? 'mr-72' : 'mr-8'}"
+        class="text-accent text-6xl uppercase tracking-[.3em] font-bold
+          transition-all duration-300 mt-6 opacity-60 {$navMenuOpen ? 'mr-72' : 'mr-6'}"
       >
         {section}
       </h1>
