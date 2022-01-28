@@ -2,13 +2,12 @@ import { readable, writable } from 'svelte/store';
 
 export const pageSections = readable([
   'Home',
-  'Mitglieder',
+  'Team',
   'Events',
-  'Sounds',
-  'Fotos',
-  'Videos',
-  'Feedback',
+  'Medien',
   'News',
+  'Feedback',
+  'Partner',
   'Kontakt'
 ]);
 

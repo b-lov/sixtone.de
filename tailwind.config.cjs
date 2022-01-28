@@ -7,7 +7,9 @@ const config = {
         oswald: ['Oswald']
       },
       colors: {
-        accent: '#d97706'
+        accent: 'hsl(32deg 85% 40%)'
+        // accent: '#bf7522'
+        // accent: '#d97706'
       }
     }
   },
