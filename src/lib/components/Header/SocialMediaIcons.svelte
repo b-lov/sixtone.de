@@ -33,7 +33,7 @@
 <div class="flex flex-row gap-6 items-center">
   {#each icons as { viewBox, svg, href }}
     <a {href} target="_blank">
-      <svg {viewBox} height="{size}rem" class="fill-white hover:fill-accent transition-all"
+      <svg {viewBox} height="{size}rem" class="fill-white hover:fill-accent transition-colors"
         >{@html svg}</svg
       >
     </a>
