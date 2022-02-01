@@ -4,10 +4,13 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
-        oswald: ['Oswald']
+        oswald: ['Oswald'],
+        rim: ['Rat Infested Mailbox']
       },
       colors: {
-        accent: '#d97706'
+        accent: 'hsl(32deg 85% 40%)'
+        // accent: '#bf7522'
+        // accent: '#d97706'
       }
     }
   },

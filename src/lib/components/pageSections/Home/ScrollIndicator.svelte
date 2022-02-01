@@ -51,7 +51,8 @@
     }
     20.1%,
     100% {
-      border-color: #d97706;
+      /* border-color: #d97706;dea731 */
+      @apply border-accent;
     }
   }
 </style>

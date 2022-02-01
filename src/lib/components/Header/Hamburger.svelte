@@ -8,9 +8,9 @@
   };
 </script>
 
-<div
+<button
   id="Hamburger"
-  class="cursor-pointer w-10 h-8 flex flex-col justify-around items-end transition-all"
+  class="w-10 h-8 flex flex-col justify-around items-end transition-all"
   class:pressed={$navMenuOpen}
   on:mouseenter={() => (hovering = true)}
   on:mouseleave={() => (hovering = false)}
@@ -19,7 +19,7 @@
   <span class={hovering ? 'w-full' : 'w-5/6'} />
   <span class={hovering ? 'w-full' : 'w-3/5'} />
   <span class="w-full" />
-</div>
+</button>
 
 <style lang="postcss">
   span {
