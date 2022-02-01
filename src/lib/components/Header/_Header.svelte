@@ -16,11 +16,14 @@
       fixed bg-neutral-800 w-full flex items-center justify-between px-6 z-10
       transition-scale duration-300"
   >
+    <!-- Left -->
     <div class="flex flex-row gap-10 grow basis-0">
-      <Icon name="search" />
+      <Icon name="search" class="hover:scale-125 transition-transform cursor-pointer" />
       <SocialMediaIcons />
     </div>
+    <!-- Center -->
     <Logo collapsed={scrollY > 40} />
+    <!-- Right -->
     <div class="flex justify-end grow basis-0">
       <Hamburger />
     </div>
