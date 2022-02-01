@@ -52,4 +52,10 @@
     src: local(''), url('/fonts/oswald/oswald-v40-latin_cyrillic-700.woff2') format('woff2'),
       url('/fonts/oswald/oswald-v40-latin_cyrillic-700.woff') format('woff');
   }
+  @font-face {
+    font-family: 'Rat Infested Mailbox';
+    font-display: swap;
+    src: local(''), url('/fonts/rat_infested_mailbox/rat_infested_mailbox.woff2') format('woff2'),
+      url('/fonts/rat_infested_mailbox/rat_infested_mailbox.woff') format('woff');
+  }
 }
