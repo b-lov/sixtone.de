@@ -1,8 +1,8 @@
 <script lang="ts">
   const size: number = 1.2;
 
-  type iconType = Record<'name' | 'viewBox' | 'svg' | 'href', string>;
-  const icons: iconType[] = [
+  type SMiconType = Record<'name' | 'viewBox' | 'svg' | 'href', string>;
+  const icons: SMiconType[] = [
     {
       name: 'youtube',
       viewBox: '0 0 167 128',
@@ -30,12 +30,12 @@
   ];
 </script>
 
-<div class="flex flex-row gap-6 items-center">
+<div class="flex flex-row gap-6">
   {#each icons as { viewBox, svg, href }}
     <a {href} target="_blank">
-      <svg {viewBox} height="{size}rem" class="fill-white hover:fill-accent transition-colors"
-        >{@html svg}</svg
-      >
+      <svg {viewBox} height="{size}rem" class="fill-white hover:fill-accent transition-colors">
+        {@html svg}
+      </svg>
     </a>
   {/each}
 </div>
