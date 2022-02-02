@@ -23,7 +23,6 @@
         size={1.5}
         class="fill-white hover:scale-125 transition-transform cursor-pointer"
       />
-
       <SocialMediaIcons />
     </div>
     <!-- Center -->

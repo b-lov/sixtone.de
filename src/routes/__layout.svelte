@@ -5,9 +5,9 @@
   import '../app.css';
 </script>
 
-<div class="bg-neutral-800">
-  <NavMenu />
-  <Header />
-  <slot />
-  <Footer />
-</div>
+<!-- <div class="bg-neutral-900"> -->
+<NavMenu />
+<Header />
+<slot />
+<Footer />
+<!-- </div> -->
