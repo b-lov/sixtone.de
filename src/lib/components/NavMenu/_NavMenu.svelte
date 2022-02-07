@@ -5,7 +5,7 @@
   import NavMenuLink from './NavMenuLink.svelte';
   import CurrentSectionChecker from './CurrentSectionChecker.svelte';
 
-  let currentSection: string;
+  let currentSection: string = '';
 </script>
 
 <svelte:window on:keydown={(event) => event.key === 'Escape' && navMenuOpen.set(false)} />
