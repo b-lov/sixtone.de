@@ -11,4 +11,8 @@ export const pageSections = readable([
   'Kontakt'
 ]);
 
+export const currentSection = writable();
+
 export const navMenuOpen = writable(false);
+
+export const bigHeader = writable();

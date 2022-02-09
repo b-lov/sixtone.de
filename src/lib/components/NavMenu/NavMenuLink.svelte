@@ -1,9 +1,9 @@
 <script lang="ts">
   import { fly } from 'svelte/transition';
+  import { currentSection } from '$lib/stores';
   export let section: string;
-  let underline: boolean;
   export let flyDelay: number;
-  export let accent: boolean;
+  let underline: boolean;
 </script>
 
 <button
@@ -14,7 +14,7 @@
     });
   }}
   class="relative text-3xl font-bold tracking-widest transition-all
-    {accent ? 'text-accent' : 'text-white'}"
+    {section === $currentSection ? 'text-accent' : 'text-white'}"
   on:mouseenter={() => (underline = true)}
   on:mouseleave={() => (underline = false)}
 >
