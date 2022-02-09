@@ -14,3 +14,5 @@ export const pageSections = readable([
 export const currentSection = writable();
 
 export const navMenuOpen = writable(false);
+
+export const bigHeader = writable();
