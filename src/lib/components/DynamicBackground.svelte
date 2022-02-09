@@ -9,7 +9,7 @@
     translateY(-{scrollY / 2}px)
     scale({1 + scrollY * 0.0005})
   ;"
-  class="fixed -z-10 w-screen"
+  class="fixed -z-10 w-screen top-0"
 >
   <div
     id="picture"

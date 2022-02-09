@@ -1,2 +1,2 @@
-export { default as ClickOutside } from './ClickOutside';
-export { default as Intersector } from './Intersector';
+export { default as clickOutside } from './clickOutside';
+export { default as useViewport } from './useViewport';

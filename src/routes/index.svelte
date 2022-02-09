@@ -1,14 +1,21 @@
 <script lang="ts">
-  import DynamicBackground from '$lib/components/DynamicBackground.svelte';
   import Home from '$lib/components/Sections/Home/_Home.svelte';
   import Team from '$lib/components/Sections/Team/_Team.svelte';
-  import { pageSections, navMenuOpen } from '$lib/stores';
+  import { pageSections, currentSection, navMenuOpen } from '$lib/stores';
+  import { useViewport } from '$lib/actions';
+
+  const updateCurrentSection = ({ detail }) => {
+    currentSection.set(detail.target.id);
+  };
 </script>
 
-<DynamicBackground />
-
 {#each $pageSections as section, i}
-  <section id={section} class="h-0 min-h-screen flex flex-col">
+  <section
+    id={section}
+    class="h-0 min-h-[120vh] flex flex-col"
+    use:useViewport={{ rootMargin: '-50% 0%' }}
+    on:enterViewport={updateCurrentSection}
+  >
     {#if section === 'Home'}
       <Home />
     {:else if section === 'Team'}
