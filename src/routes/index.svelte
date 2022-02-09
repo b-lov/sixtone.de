@@ -12,7 +12,7 @@
 {#each $pageSections as section, i}
   <section
     id={section}
-    class="h-0 min-h-[120vh] flex flex-col"
+    class="h-0 min-h-screen flex flex-col"
     use:useViewport={{ rootMargin: '-50% 0%' }}
     on:enterViewport={updateCurrentSection}
   >
