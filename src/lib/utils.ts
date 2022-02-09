@@ -3,9 +3,9 @@ import { pageSections } from '$lib/stores';
 
 export const getSectionsBoundaries = (): { name: string; top: number; bottom: number }[] => {
   return get(pageSections).map((name) => {
-    const offset = window.scrollY - window.innerHeight / 2;
-    let { top, bottom } = document.getElementById(name).getBoundingClientRect();
-    (top += offset), (bottom += offset);
+    // const offset = window.scrollY - window.innerHeight / 2;
+    const { top, bottom } = document.getElementById(name).getBoundingClientRect();
+    // (top += offset), (bottom += offset);
     return { name, top, bottom };
   });
 };

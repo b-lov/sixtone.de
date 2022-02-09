@@ -1,7 +1,7 @@
 <script lang="ts">
   import { fly } from 'svelte/transition';
   import { pageSections, navMenuOpen } from '$lib/stores';
-  import { clickOutside } from '$lib/actions';
+  import { ClickOutside } from '$lib/actions';
   import NavMenuLink from './NavMenuLink.svelte';
   import CurrentSectionChecker from './CurrentSectionChecker.svelte';
 
@@ -12,7 +12,7 @@
 {#if $navMenuOpen}
   <CurrentSectionChecker bind:currentSection />
   <div
-    use:clickOutside={() => navMenuOpen.set(false)}
+    use:ClickOutside={() => navMenuOpen.set(false)}
     transition:fly={{ x: 200 }}
     class="flex justify-end items-center fixed bg-black/70 right-0 h-full z-10"
   >
