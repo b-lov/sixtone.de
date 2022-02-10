@@ -4,6 +4,7 @@
   import ScrollIndicator from './ScrollIndicator.svelte';
   import { useViewport } from '$lib/actions';
   import { bigHeader } from '$lib/stores';
+  import DynamicBackground from '../DynamicBackground.svelte';
 </script>
 
 <div
@@ -12,6 +13,7 @@
   on:exitViewport={() => bigHeader.set(false)}
   class="h-full flex items-center justify-between flex-col p-8"
 >
+  <DynamicBackground />
   <BgStamp />
   <div id="dummy" class="h-64" />
   <Caption />
