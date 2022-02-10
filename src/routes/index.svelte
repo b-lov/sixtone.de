@@ -22,10 +22,11 @@
       <Team />
     {:else}
       <div class="h-full flex justify-end">
-        <!-- <div class="h-full flex justify-end {i % 2 && 'bg-neutral-800'}"> -->
         <h1
-          class="text-accent text-6xl uppercase tracking-[.3em] font-bold
-            transition-all duration-300 mt-6 opacity-60 {$navMenuOpen ? 'mr-72' : 'mr-6'}"
+          class="
+            text-accent text-6xl uppercase tracking-[.3em] font-bold
+            transition-all duration-300 mt-6 opacity-60 {$navMenuOpen ? 'mr-72' : 'mr-6'}
+          "
         >
           {section}
         </h1>

@@ -1,16 +1,30 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+
+  export let scrollEffect: boolean = false;
+  export let scaleEffect: boolean = false;
+  export let imagePath: string;
   let scrollY: number;
+  let overlay: string =
+    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAABRJREFUGFdjZGBg+M/AwMDIyAAFAA4pAQP4L554AAAAAElFTkSuQmCC';
+  let thisElement: HTMLElement;
+  let elementStart: number;
+  onMount(() => {
+    elementStart = thisElement.getBoundingClientRect().top;
+  });
 </script>
 
 <svelte:window bind:scrollY />
 <div
-  class="absolute w-full h-full -z-10 top-0 bg-cover bg-right bg-fixed bg-neutral-800/70
-    bg-blend-multiply"
-  style="background-image: url(/images/bg1.jpg); background-position-y: -{scrollY / 2}px;"
+  bind:this={thisElement}
+  class="
+    absolute w-full h-full -z-10 top-0 bg-center bg-fixed bg-neutral-800/70 bg-blend-multiply
+  "
+  style="
+    background-image: url(/images/{imagePath}.jpg);
+    {scrollEffect ? `background-position-y: -${scrollY / 2}px;` : ''}
+    background-size: {scaleEffect ? `auto ${100 + (scrollY - elementStart) / 16}%` : 'cover'}
+  "
 >
-  <div
-    id="dot-overlay"
-    class="h-full w-full"
-    style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAABRJREFUGFdjZGBg+M/AwMDIyAAFAA4pAQP4L554AAAAAElFTkSuQmCC);"
-  />
+  <div class="h-full w-full" style=" background-image: url({overlay}); " />
 </div>
