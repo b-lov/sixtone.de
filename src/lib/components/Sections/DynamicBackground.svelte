@@ -4,11 +4,13 @@
   export let scrollEffect: boolean = false;
   export let scaleEffect: boolean = false;
   export let imagePath: string;
+
   let scrollY: number;
   let overlay: string =
     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAABRJREFUGFdjZGBg+M/AwMDIyAAFAA4pAQP4L554AAAAAElFTkSuQmCC';
   let thisElement: HTMLElement;
   let elementStart: number;
+
   onMount(() => {
     elementStart = thisElement.getBoundingClientRect().top;
   });
@@ -28,3 +30,6 @@
 >
   <div class="h-full w-full" style=" background-image: url({overlay}); " />
 </div>
+
+<!-- TODO: use viewport to only render element on sight
+make better scaleEffect calculation -->
