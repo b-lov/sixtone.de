@@ -13,7 +13,7 @@
   <section
     id={section}
     class="h-0 min-h-screen flex flex-col"
-    use:useViewport={{ rootMargin: '-50% 0%' }}
+    use:useViewport={{ rootMargin: '-50%' }}
     on:enterViewport={updateCurrentSection}
   >
     {#if section === 'Home'}

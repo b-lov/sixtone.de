@@ -10,7 +10,10 @@
 </script>
 
 <div
-  class="flex flex-row gap-4 tracking-[.25em] font-oswald text-4xl uppercase text-white font-extralight"
+  class="
+    flex flex-row gap-4 tracking-[.25em] font-oswald text-4xl uppercase text-white
+    font-extralight z-[1]
+  "
 >
   {#each caption as { text, fat, accent }}
     <span class="{fat && 'font-bold'} {accent && 'text-accent'}">{text}</span>

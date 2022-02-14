@@ -9,10 +9,10 @@
   let overlay: string =
     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAABRJREFUGFdjZGBg+M/AwMDIyAAFAA4pAQP4L554AAAAAElFTkSuQmCC';
   let thisElement: HTMLElement;
-  let elementStart: number;
+  let elementPosition: number;
 
   onMount(() => {
-    elementStart = thisElement.getBoundingClientRect().top;
+    elementPosition = thisElement.getBoundingClientRect().top + window.scrollY;
   });
 </script>
 
@@ -20,12 +20,12 @@
 <div
   bind:this={thisElement}
   class="
-    absolute w-full h-full -z-10 top-0 bg-center bg-fixed bg-neutral-800/70 bg-blend-multiply
+    absolute w-full h-full top-0 bg-center bg-fixed bg-neutral-800/70 bg-blend-multiply
   "
   style="
     background-image: url(/images/{imagePath}.jpg);
     {scrollEffect ? `background-position-y: -${scrollY / 2}px;` : ''}
-    background-size: {scaleEffect ? `auto ${100 + (scrollY - elementStart) / 16}%` : 'cover'}
+    background-size: {scaleEffect ? `auto ${100 + (scrollY - elementPosition) / 16}%` : 'cover'}
   "
 >
   <div class="h-full w-full" style=" background-image: url({overlay}); " />
