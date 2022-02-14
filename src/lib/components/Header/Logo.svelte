@@ -3,6 +3,8 @@
   export let collapsed: boolean = false;
 </script>
 
+<!-- TODO: make logo change colors -->
+<!-- see: https://svelte.dev/tutorial/bind-this -->
 <span
   class="{collapsed &&
     'scale-75'} cursor-pointer text-white font-rim text-2xl pt-2 transition-transform duration-300 "
