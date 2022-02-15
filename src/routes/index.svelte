@@ -5,12 +5,13 @@
   // TODO: make better use of IntersectionObserver to observe all sections with one instance.
   import { useViewport } from '$lib/actions';
   import SectionHeading from '$lib/components/Sections/SectionHeading.svelte';
+  import Gallery from '$lib/components/Sections/Gallery/_Gallery.svelte';
 </script>
 
-{#each $pageSections as section, i}
+{#each $pageSections as section}
   <section
     id={section}
-    class="h-0 min-h-screen flex flex-col"
+    class="min-h-screen flex flex-col"
     use:useViewport={{ rootMargin: '-50%' }}
     on:enterViewport={({ detail }) => currentSection.set(detail.target.id)}
   >
@@ -20,6 +21,8 @@
       <SectionHeading {section} />
       {#if section === 'Team'}
         <Team />
+      {:else if section === 'Gallerie'}
+        <Gallery />
       {:else}
         <div class="h-full" />
       {/if}
