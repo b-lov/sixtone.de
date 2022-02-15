@@ -2,6 +2,7 @@
   import Home from '$lib/components/Sections/Home/_Home.svelte';
   import Team from '$lib/components/Sections/Team/_Team.svelte';
   import { pageSections, currentSection, navMenuOpen } from '$lib/stores';
+  // TODO: make better use of IntersectionObserver to observe all sections with one instance.
   import { useViewport } from '$lib/actions';
 
   const updateCurrentSection = ({ detail }) => {

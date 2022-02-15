@@ -3,8 +3,8 @@ import { readable, writable } from 'svelte/store';
 export const pageSections = readable([
   'Home',
   'Events',
-  'Team',
   'Medien',
+  'Team',
   'News',
   'Feedback',
   'Partner',

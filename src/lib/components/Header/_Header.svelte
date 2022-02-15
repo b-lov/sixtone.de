@@ -23,8 +23,7 @@
       />
       <SocialMediaIcons />
     </div>
-    <!-- TODO: make logo into SVG -->
-    <Logo collapsed={!$bigHeader} />
+    <Logo />
     <div class="flex justify-end grow basis-0">
       <Hamburger />
     </div>
