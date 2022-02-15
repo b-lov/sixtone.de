@@ -12,7 +12,7 @@
   <header
     transition:fly={{ duration: 100, y: -20 }}
     class="
-      {$bigHeader ? 'bg-opacity-0 h-24 py-3' : 'h-16 py-2.5 shadow-lg'} fixed bg-neutral-800
+      {$bigHeader ? 'bg-opacity-0 h-24 py-3' : 'h-16 py-2 shadow-lg'} fixed bg-neutral-800
       w-full flex items-center justify-between px-6 z-10 transition-scale duration-300
     "
   >

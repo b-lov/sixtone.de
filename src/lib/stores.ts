@@ -2,9 +2,9 @@ import { readable, writable } from 'svelte/store';
 
 export const pageSections = readable([
   'Home',
-  'Events',
-  'Medien',
   'Team',
+  'Shows',
+  'Gallerie',
   'News',
   'Feedback',
   'Partner',
