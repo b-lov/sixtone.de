@@ -1,5 +1,5 @@
-<div id="wrapper" class="h-16">
-  <div class="indicator relative w-7 h-7 rotate-45">
+<div class="h-16">
+  <div class="relative w-7 h-7 rotate-45">
     {#each [1, 2, 3] as item}
       <span
         class="
