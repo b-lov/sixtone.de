@@ -17,3 +17,5 @@ declare module '*&imagetools' {
   const out;
   export default out;
 }
+
+declare module 'element-resize-event';
