@@ -1,19 +1,20 @@
 <script lang="ts">
   import Home from '$lib/components/Sections/Home/_Home.svelte';
-  import Team from '$lib/components/Sections/Team/_Team.svelte';
-  import { pageSections, currentSection } from '$lib/stores';
-  // TODO: make better use of IntersectionObserver to observe all sections with one instance.
-  import { useViewport } from '$lib/actions';
   import SectionHeading from '$lib/components/Sections/SectionHeading.svelte';
+  import Team from '$lib/components/Sections/Team/_Team.svelte';
   import Gallery from '$lib/components/Sections/Gallery/_Gallery.svelte';
+
+  import { pageSections, currentSection } from '$lib/stores';
+  import { useViewport } from '$lib/actions';
 </script>
 
+<!-- TODO: make better use of IntersectionObserver to observe all sections with one instance. -->
 {#each $pageSections as section}
   <section
-    id={section}
-    class="min-h-screen flex flex-col"
     use:useViewport={{ rootMargin: '-50%' }}
     on:enterViewport={({ detail }) => currentSection.set(detail.target.id)}
+    id={section}
+    class="min-h-screen flex flex-col"
   >
     {#if section === 'Home'}
       <Home />
