@@ -27,7 +27,7 @@
 
   // props
   export let images = [];
-  export let targetRowHeight = 320;
+  export let targetRowHeight = 220;
   export let padding = 0;
 
   // state
