@@ -2,12 +2,13 @@
   import ImageMasonry from './Masonry/ImageMasonry.svelte';
   import openPhotoSwipe from './Photoswipe/index';
   import PswpTemplate from './Photoswipe/PswpTemplate.svelte';
+  const allImages = import.meta.glob('/static/images/gallery/*.jpg');
 
   let element: HTMLElement;
+  // let myImages = [];
 
   const getImages = async () => {
     const Images = [];
-    const allImages = import.meta.glob('/static/images/gallery/*.jpg');
     for (let image in allImages) {
       const dataPath = `${image}?meta&imagetools`;
       await import(/* @vite-ignore */ dataPath).then(({ width, height }) => {
