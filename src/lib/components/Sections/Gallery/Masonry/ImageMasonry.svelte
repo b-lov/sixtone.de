@@ -16,7 +16,7 @@
     return `height:${scaledHeight}px; flex: ${flex}; margin-right:${mr}; margin-bottom: ${mb}`;
   }
 
-  function onClick(index) {
+  function onClick(index: number) {
     dispatch('image-click', {
       image: images[index],
       index
@@ -31,9 +31,9 @@
   export let padding = 0;
 
   // state
-  let element;
+  let element: HTMLElement;
   let scaledImages = [];
-  let width;
+  let width: number;
   let isResizing = true;
 
   // reactive statement
