@@ -24,22 +24,22 @@ function calcSeekLimit(containerWidth, targetRowHeight) {
   return Math.round(count * 1.5);
 }
 
-type Image = {
+interface Image {
   width: number;
   height: number;
   title: string;
   src: string;
   msrc: string;
-};
+}
 
-type ScaledImage = Image & {
+interface ScaledImage extends Image {
   index: number;
   ratio: number;
   scaledWidth: number;
   scaledHeight: number;
   isLastInRow: boolean;
   isLastRow: boolean;
-};
+}
 
 export default function (
   images: Image[],
