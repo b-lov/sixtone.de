@@ -19,10 +19,10 @@ export function scaleWidth(height: number, ratio: number): number {
 }
 
 export function debounce(func: () => void, timeout: number): () => void {
-  let timer: ReturnType<typeof setTimeout>;
+  let timer: number;
   return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
+    window.clearTimeout(timer);
+    timer = window.setTimeout(() => {
       func.apply(this, args);
     }, timeout);
   };
