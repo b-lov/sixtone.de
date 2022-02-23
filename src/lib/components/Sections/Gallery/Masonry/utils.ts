@@ -1,7 +1,7 @@
-// really needed???
-// if (Number.EPSILON === undefined) {
-//   Number.EPSILON = Math.pow(2, -52);
-// }
+if (Number.EPSILON === undefined) {
+  // @ts-expect-error: polyfill for cases when EPSILON doesn't exist (IE)
+  Number.EPSILON = Math.pow(2, -52);
+}
 
 export function round(n: number): number {
   return Math.round(n * 100 + Number.EPSILON) / 100;
