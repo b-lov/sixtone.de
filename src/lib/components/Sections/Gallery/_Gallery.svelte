@@ -24,25 +24,11 @@
   };
 
   function onClick(event) {
-    console.log('clicked');
-    // // create array compatible with PhotoSwipe
-    // const imgs = getImages().then((images) =>
-    //   images.map(({ src, w, h, original, title }) => {
-    //     return {
-    //       src: original,
-    //       msrc: src,
-    //       w,
-    //       h,
-    //       title
-    //     };
-    //   })
-    // );
-
-    // imgs.then((imgs) => {
-    //   openPhotoSwipe(imgs, event.detail.index, (index) => {
-    //     return element.querySelectorAll('[data-masonry-image]')[index];
-    //   });
-    // });
+    getImages().then((imgs) => {
+      openPhotoSwipe(imgs, event.detail.index, (index) => {
+        return element.querySelectorAll('[data-masonry-image]')[index];
+      });
+    });
   }
 </script>
 
