@@ -1,10 +1,6 @@
 <script lang="ts">
   import ImageMasonry from './Masonry/ImageMasonry.svelte';
-  import openPhotoSwipe from './Photoswipe/index';
-  import PhotoswipeTemplate from './Photoswipe/PhotoswipeTemplate.svelte';
   const allImages = import.meta.glob('/static/images/gallery/*.jpg');
-
-  let element: HTMLElement;
 
   const getImages = async () => {
     const Images = [];
@@ -22,19 +18,8 @@
     }
     return Images;
   };
-
-  function onClick(event) {
-    getImages().then((imgs) => {
-      openPhotoSwipe(imgs, event.detail.index, (index) => {
-        return element.querySelectorAll('[data-masonry-image]')[index];
-      });
-    });
-  }
 </script>
 
 {#await getImages() then images}
-  <div bind:this={element}>
-    <ImageMasonry {images} targetRowHeight={300} on:image-click={onClick} let:image />
-  </div>
+  <ImageMasonry {images} targetRowHeight={300} />
 {/await}
-<PhotoswipeTemplate />
