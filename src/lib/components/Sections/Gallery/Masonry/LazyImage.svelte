@@ -11,6 +11,7 @@
   // props
   export let src = '';
   export let srcset = '';
+  // TODO: pass title here
   export let alt = '';
 
   // state
