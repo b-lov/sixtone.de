@@ -28,7 +28,7 @@
   // props
   export let images = [];
   export let targetRowHeight = 220;
-  export let padding = 0;
+  export let padding = 10;
 
   // state
   let element;
@@ -38,12 +38,7 @@
 
   // reactive statement
   $: if (width) {
-    scaledImages = createLayout({
-      images,
-      containerWidth: width,
-      targetHeight: targetRowHeight,
-      padding
-    });
+    scaledImages = createLayout(images, width, targetRowHeight, padding);
   }
 
   onMount(() => {

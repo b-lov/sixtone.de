@@ -1,7 +1,5 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
 import { dijkstra } from './dijkstra';
-import { round, ratio, scaleHeight, scaleWidth } from './utils';
+import { ratio, scaleHeight, scaleWidth } from './utils';
 
 function getRowHeight(row, containerWidth, padding) {
   const rowWidth = containerWidth - (row.length - 1) * padding;
@@ -26,24 +24,27 @@ function calcSeekLimit(containerWidth, targetRowHeight) {
   return Math.round(count * 1.5);
 }
 
-export default function ({
-  images,
-  containerWidth,
-  targetHeight,
-  padding = 2,
-  seekLimit = calcSeekLimit,
-  byRow = false
-} = {}) {
+export default function (
+  images: Record<string, unknown>[],
+  containerWidth: number,
+  targetHeight: number,
+  padding?: number
+): Record<string, unknown>[] {
   // clone the images, and set ratio and initial scaled width / height
   const _images = images.map((image, index) => {
     return {
       ...image,
       index,
-      ratio: ratio(image.width, image.height)
+      ratio: ratio(image.width, image.height),
+      scaledWidth: 0,
+      scaledHeight: 0,
+      scaledWidthPc: 0,
+      isLastInRow: false,
+      isLastRow: false
     };
   });
 
-  const nodeSeekLimit = seekLimit(containerWidth, targetHeight);
+  const nodeSeekLimit = calcSeekLimit(containerWidth, targetHeight);
 
   const graph = (start) => {
     const results = {};
@@ -60,8 +61,8 @@ export default function ({
 
   const path = dijkstra.find_path(graph, '0', _images.length);
 
-  const rows = [];
   const scaledImages = [];
+
   for (let i = 0; i < path.length; i++) {
     if (path[i + 1]) {
       const row = _images.slice(+path[i], +path[i + 1]);
@@ -72,7 +73,7 @@ export default function ({
       row.forEach((image, index) => {
         image.scaledWidth = scaleWidth(rowHeight, image.ratio); //.toFixed(1);
         image.scaledHeight = rowHeight;
-        image.scaledWidthPc = round((image.scaledWidth / containerWidth) * 100);
+        // image.scaledWidthPc = round((image.scaledWidth / containerWidth) * 100);
 
         if (index === row.length - 1) {
           image.isLastInRow = true;
@@ -81,13 +82,8 @@ export default function ({
 
         scaledImages.push(image);
       });
-      rows.push(row);
     }
   }
 
-  if (byRow) {
-    return rows;
-  } else {
-    return scaledImages;
-  }
+  return scaledImages;
 }
