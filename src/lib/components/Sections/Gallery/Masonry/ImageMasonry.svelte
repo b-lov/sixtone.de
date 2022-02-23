@@ -46,7 +46,7 @@
 
     const resizedFinished = debounce(() => {
       isResizing = false;
-    }, 100);
+    }, 300);
 
     elementResizeEvent(element, () => {
       if (Math.round(width) !== Math.round(element.getBoundingClientRect().width)) {
