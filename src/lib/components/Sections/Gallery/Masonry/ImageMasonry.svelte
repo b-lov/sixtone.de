@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { onMount, createEventDispatcher } from 'svelte';
   import createLayout from './justified-layout';
   import elementResizeEvent, { unbind } from 'element-resize-event';

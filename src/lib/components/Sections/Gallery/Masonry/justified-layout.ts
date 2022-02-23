@@ -31,16 +31,11 @@ export default function (
   padding?: number
 ): Record<string, unknown>[] {
   // clone the images, and set ratio and initial scaled width / height
-  const _images = images.map((image, index) => {
+  const _images: Record<string, unknown>[] = images.map((image, index) => {
     return {
       ...image,
       index,
-      ratio: ratio(image.width, image.height),
-      scaledWidth: 0,
-      scaledHeight: 0,
-      scaledWidthPc: 0,
-      isLastInRow: false,
-      isLastRow: false
+      ratio: ratio(image.width, image.height)
     };
   });
 
@@ -73,7 +68,6 @@ export default function (
       row.forEach((image, index) => {
         image.scaledWidth = scaleWidth(rowHeight, image.ratio); //.toFixed(1);
         image.scaledHeight = rowHeight;
-        // image.scaledWidthPc = round((image.scaledWidth / containerWidth) * 100);
 
         if (index === row.length - 1) {
           image.isLastInRow = true;
