@@ -59,12 +59,4 @@
 <style lang="postcss">
   @import url('./photoswipe.css');
   @import url('./default-skin/default-skin.css');
-
-  :global(.pswp__caption .pswp__caption__center) {
-    font-size: 1rem;
-  }
-
-  :global(.pswp__ui--fit .pswp__caption) {
-    background-color: rgba(0, 0, 0, 0.6);
-  }
 </style>
