@@ -9,6 +9,7 @@ export default function (images, index, getElement) {
     mainClass: 'pswp--minimal--dark',
     shareEl: false,
     bgOpacity: 0.9,
+    captionEl: false,
     getThumbBoundsFn: (index) => {
       if (!getElement) {
         return;
