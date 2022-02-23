@@ -55,7 +55,7 @@ export default function (
       ratio: ratio(image.width, image.height),
       scaledWidth: undefined,
       scaledHeight: undefined,
-      isLastInRow: undefined,
+      isLastInRow: false,
       isLastRow: undefined
     };
   });
