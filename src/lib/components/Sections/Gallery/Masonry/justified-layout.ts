@@ -25,8 +25,8 @@ function calcSeekLimit(containerWidth, targetRowHeight) {
 }
 
 interface Image {
-  width: number;
-  height: number;
+  w: number;
+  h: number;
   title: string;
   src: string;
   msrc: string;
@@ -52,7 +52,7 @@ export default function (
     return {
       ...image,
       index,
-      ratio: ratio(image.width, image.height),
+      ratio: ratio(image.w, image.h),
       scaledWidth: undefined,
       scaledHeight: undefined,
       isLastInRow: false,

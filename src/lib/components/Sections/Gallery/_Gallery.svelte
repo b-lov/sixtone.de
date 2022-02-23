@@ -12,11 +12,10 @@
       const dataPath = `${image}?meta&imagetools`;
       await import(/* @vite-ignore */ dataPath).then(({ width, height }) => {
         Images.push({
-          src: image.replace('gallery/', 'gallery/small/'),
-          // src: image,
-          original: image,
-          width,
-          height,
+          src: image,
+          msrc: image.replace('gallery/', 'gallery/small/'),
+          w: width,
+          h: height,
           title: 'Lorem ipsum dolor'
         });
       });
@@ -25,24 +24,25 @@
   };
 
   function onClick(event) {
-    // create array compatible with PhotoSwipe
-    const imgs = getImages().then((images) =>
-      images.map(({ src, width, height, original, title }) => {
-        return {
-          src: original,
-          msrc: src,
-          w: width,
-          h: height,
-          title
-        };
-      })
-    );
+    console.log('clicked');
+    // // create array compatible with PhotoSwipe
+    // const imgs = getImages().then((images) =>
+    //   images.map(({ src, w, h, original, title }) => {
+    //     return {
+    //       src: original,
+    //       msrc: src,
+    //       w,
+    //       h,
+    //       title
+    //     };
+    //   })
+    // );
 
-    imgs.then((imgs) => {
-      openPhotoSwipe(imgs, event.detail.index, (index) => {
-        return element.querySelectorAll('[data-masonry-image]')[index];
-      });
-    });
+    // imgs.then((imgs) => {
+    //   openPhotoSwipe(imgs, event.detail.index, (index) => {
+    //     return element.querySelectorAll('[data-masonry-image]')[index];
+    //   });
+    // });
   }
 </script>
 

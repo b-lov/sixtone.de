@@ -5,6 +5,15 @@
   import LazyImage from './LazyImage.svelte';
   import { debounce } from './utils';
 
+  export let images = [];
+  export let targetRowHeight = 220;
+  export let padding = 0;
+
+  let element: HTMLElement;
+  let scaledImages = [];
+  let width: number;
+  let isResizing = true;
+
   function makeStyle({ scaledWidth, scaledHeight, isLastInRow, isLastRow }) {
     let mr = padding + 'px';
     const mb = isLastRow ? '0' : mr;
@@ -25,18 +34,6 @@
 
   const dispatch = createEventDispatcher();
 
-  // props
-  export let images = [];
-  export let targetRowHeight = 220;
-  export let padding = 0;
-
-  // state
-  let element: HTMLElement;
-  let scaledImages = [];
-  let width: number;
-  let isResizing = true;
-
-  // reactive statement
   $: if (width) {
     scaledImages = createLayout(images, width, targetRowHeight, padding);
   }
@@ -63,9 +60,9 @@
 <div class="image-masonry {isResizing ? 'is-resizing' : ''}">
   <div data-resizer bind:this={element} />
   <div class="image-masonry-container" style="width: {width}px">
-    {#each scaledImages as image (image.src)}
+    {#each scaledImages as image (image.msrc)}
       <div class="masonry-item" style={makeStyle(image)} on:click={() => onClick(image.index)}>
-        <LazyImage src={image.src} />
+        <LazyImage src={image.msrc} />
         <slot {image} />
       </div>
     {/each}
