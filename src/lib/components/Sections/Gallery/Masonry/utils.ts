@@ -1,9 +1,8 @@
-if (Number.EPSILON === undefined) {
-  // @ts-expect-error: polyfill for cases when EPSILON doesn't exist (IE)
-  Number.EPSILON = Math.pow(2, -52);
-}
-
 export function round(n: number): number {
+  if (Number.EPSILON === undefined) {
+    // @ts-expect-error: polyfill for cases when EPSILON doesn't exist (IE)
+    Number.EPSILON = Math.pow(2, -52);
+  }
   return Math.round(n * 100 + Number.EPSILON) / 100;
 }
 
@@ -28,16 +27,3 @@ export function debounce(func: () => void, timeout: number): () => void {
     }, timeout);
   };
 }
-
-// OLD debounce
-// export function debounce(fn: () => void, delay: number): () => void {
-//   let timeoutID = null;
-//   return function () {
-//     clearTimeout(timeoutID);
-//     const args = arguments;
-//     const context = this;
-//     timeoutID = setTimeout(function () {
-//       fn.apply(context, args);
-//     }, delay);
-//   };
-// }
