@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ImageMasonry from './Masonry/ImageMasonry.svelte';
+  import Masonry from './Masonry.svelte';
   const allImages = import.meta.glob('/static/images/gallery/*.jpg');
 
   const getImages = async () => {
@@ -20,6 +20,6 @@
   };
 </script>
 
-{#await getImages() then images}
-  <ImageMasonry {images} targetRowHeight={300} />
+{#await getImages() then rawImages}
+  <Masonry {rawImages} targetRowHeight={300} />
 {/await}

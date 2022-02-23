@@ -19,3 +19,7 @@ declare module '*&imagetools' {
 }
 
 declare module 'element-resize-event';
+
+declare module 'photoswipe';
+
+declare module 'photoswipe/dist/photoswipe-ui-default';

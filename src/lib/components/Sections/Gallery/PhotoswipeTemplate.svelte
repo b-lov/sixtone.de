@@ -1,6 +1,45 @@
-<script>
+<script lang="ts">
   import 'photoswipe/dist/photoswipe.css';
   import 'photoswipe/dist/default-skin/default-skin.css';
+
+  import PhotoSwipe from 'photoswipe';
+  import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default';
+
+  interface Image {
+    src: string;
+    msrc: string;
+    w: number;
+    h: number;
+    title?: string;
+  }
+
+  export function openPhotoSwipe(
+    images: Image[],
+    index: number,
+    getElement: { (index: number): Element }
+  ): Record<string, unknown> {
+    const gallery = new PhotoSwipe(document.querySelector('.pswp'), PhotoSwipeUI_Default, images, {
+      history: false,
+      closeOnScroll: false,
+      index: +index,
+      mainClass: 'pswp--minimal--dark',
+      shareEl: false,
+      bgOpacity: 0.9,
+      captionEl: false,
+      getThumbBoundsFn: (index) => {
+        if (!getElement) {
+          return;
+        }
+        const thumbnail = getElement(index);
+        const pageYScroll = window.pageYOffset || document.documentElement.scrollTop;
+        const rect = thumbnail.getBoundingClientRect();
+        return { x: rect.left, y: rect.top + pageYScroll, w: rect.width };
+      }
+    });
+    gallery.init();
+
+    return gallery;
+  }
 </script>
 
 <!-- Root element of PhotoSwipe. Must have class pswp. -->

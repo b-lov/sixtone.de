@@ -1,5 +1,5 @@
 import { dijkstra } from './dijkstra';
-import { ratio, scaleHeight, scaleWidth } from './utils';
+import { ratio, scaleHeight, scaleWidth } from '$lib/utils';
 
 function getRowHeight(row, containerWidth, padding) {
   const rowWidth = containerWidth - (row.length - 1) * padding;
@@ -24,6 +24,7 @@ function calcSeekLimit(containerWidth, targetRowHeight) {
   return Math.round(count * 1.5);
 }
 
+// TODO: export type to separate file?
 interface Image {
   src: string;
   msrc: string;

@@ -3,11 +3,11 @@
   import createLayout from './justified-layout';
   import elementResizeEvent, { unbind } from 'element-resize-event';
   import LazyImage from './LazyImage.svelte';
-  import { debounce } from './utils';
-  import PhotoswipeTemplate from '../Photoswipe/PhotoswipeTemplate.svelte';
-  import openPhotoSwipe from '../Photoswipe/index';
+  import { debounce } from '$lib/utils';
+  import PhotoswipeTemplate from './PhotoswipeTemplate.svelte';
+  import openPhotoSwipe from './photoswipe';
 
-  export let images = [];
+  export let rawImages = [];
   export let targetRowHeight = 220;
   export let padding = 0;
 
@@ -17,7 +17,7 @@
   let isResizing = true;
 
   $: if (width) {
-    scaledImages = createLayout(images, width, targetRowHeight, padding);
+    scaledImages = createLayout(rawImages, width, targetRowHeight, padding);
   }
 
   function makeStyle({ scaledWidth, scaledHeight, isLastInRow, isLastRow }) {
@@ -32,7 +32,7 @@
   }
 
   function photoswipeInit(index: number) {
-    openPhotoSwipe(images, index, (index) => {
+    openPhotoSwipe(rawImages, index, (index) => {
       return element.querySelectorAll('[data-masonry-image]')[index];
     });
   }
@@ -56,7 +56,7 @@
 <div class="max-w-full {isResizing ? 'overflow-hidden' : ''}">
   <div data-resizer bind:this={element}>
     <div class="flex flex-wrap" style="width: {width}px">
-      {#each scaledImages as image (image.msrc)}
+      {#each scaledImages as image}
         <div
           class="relative bg-neutral-800"
           style={makeStyle(image)}
