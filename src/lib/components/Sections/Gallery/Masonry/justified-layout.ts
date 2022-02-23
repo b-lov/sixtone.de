@@ -24,18 +24,39 @@ function calcSeekLimit(containerWidth, targetRowHeight) {
   return Math.round(count * 1.5);
 }
 
+type Image = {
+  width: number;
+  height: number;
+  title: string;
+  src: string;
+  msrc: string;
+};
+
+type ScaledImage = Image & {
+  index: number;
+  ratio: number;
+  scaledWidth: number;
+  scaledHeight: number;
+  isLastInRow: boolean;
+  isLastRow: boolean;
+};
+
 export default function (
-  images: Record<string, unknown>[],
+  images: Image[],
   containerWidth: number,
   targetHeight: number,
   padding?: number
-): Record<string, unknown>[] {
+): ScaledImage[] {
   // clone the images, and set ratio and initial scaled width / height
-  const _images: Record<string, unknown>[] = images.map((image, index) => {
+  const _images: ScaledImage[] = images.map((image, index) => {
     return {
       ...image,
       index,
-      ratio: ratio(image.width, image.height)
+      ratio: ratio(image.width, image.height),
+      scaledWidth: undefined,
+      scaledHeight: undefined,
+      isLastInRow: undefined,
+      isLastRow: undefined
     };
   });
 
