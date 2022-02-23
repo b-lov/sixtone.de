@@ -27,7 +27,6 @@ export default function (
         return;
       }
       const thumbnail = getElement(index);
-      //const thumbnail = thumbData.container.querySelectorAll(thumbData.selector)[index];
       const pageYScroll = window.pageYOffset || document.documentElement.scrollTop;
       const rect = thumbnail.getBoundingClientRect();
       return { x: rect.left, y: rect.top + pageYScroll, w: rect.width };
