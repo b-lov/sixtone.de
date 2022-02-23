@@ -1,11 +1,10 @@
 <script lang="ts">
   import ImageMasonry from './Masonry/ImageMasonry.svelte';
   import openPhotoSwipe from './Photoswipe/index';
-  import PswpTemplate from './Photoswipe/PswpTemplate.svelte';
+  import PhotoswipeTemplate from './Photoswipe/PhotoswipeTemplate.svelte';
   const allImages = import.meta.glob('/static/images/gallery/*.jpg');
 
   let element: HTMLElement;
-  // let myImages = [];
 
   const getImages = async () => {
     const Images = [];
@@ -52,4 +51,4 @@
     <ImageMasonry {images} targetRowHeight={300} on:image-click={onClick} let:image />
   </div>
 {/await}
-<PswpTemplate />
+<PhotoswipeTemplate />
