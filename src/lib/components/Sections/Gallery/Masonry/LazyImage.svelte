@@ -1,7 +1,8 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { cache } from './cache';
   import whenElementVisible from './when-element-visible';
+
+  const cache = {};
 
   function onLoad() {
     cache[src] = true;
