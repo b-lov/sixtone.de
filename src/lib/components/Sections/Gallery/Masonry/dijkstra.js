@@ -19,6 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  *****************************************************************************/
+// TODO: find better dijkstra and try to understand it...
 export const dijkstra = {
   single_source_shortest_paths: function (graph, s, d) {
     // Predecessor map for each node that has been encountered.
