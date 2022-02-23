@@ -1,4 +1,8 @@
-export default function (element, cb, { delay = 300 } = {}) {
+export default function (
+  element: HTMLElement,
+  cb: ({ isVisibleOnInit: boolean, entry: number }) => void,
+  delay = 300
+): () => void {
   let isInitial = true;
   let prevTime = 0;
   let timeoutID = null;
