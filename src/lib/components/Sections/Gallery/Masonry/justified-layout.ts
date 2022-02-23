@@ -25,11 +25,11 @@ function calcSeekLimit(containerWidth, targetRowHeight) {
 }
 
 interface Image {
+  src: string;
+  msrc: string;
   w: number;
   h: number;
   title: string;
-  src: string;
-  msrc: string;
 }
 
 interface ScaledImage extends Image {
