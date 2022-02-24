@@ -4,8 +4,7 @@
   import elementResizeEvent, { unbind } from 'element-resize-event';
   import LazyImage from './LazyImage.svelte';
   import { debounce } from '$lib/utils';
-  import PhotoswipeTemplate from './PhotoswipeTemplate.svelte';
-  import openPhotoSwipe from './photoswipe';
+  import Photoswipe from './Photoswipe.svelte';
 
   export let rawImages = [];
   export let targetRowHeight = 220;
@@ -15,6 +14,7 @@
   let scaledImages = [];
   let width: number;
   let isResizing = true;
+  let photoswipe;
 
   $: if (width) {
     scaledImages = createLayout(rawImages, width, targetRowHeight, padding);
@@ -31,11 +31,11 @@
     return `height:${scaledHeight}px; flex: ${flex}; margin-right:${mr}; margin-bottom: ${mb}`;
   }
 
-  function photoswipeInit(index: number) {
-    openPhotoSwipe(rawImages, index, (index) => {
-      return element.querySelectorAll('[data-masonry-image]')[index];
-    });
-  }
+  // function photoswipeInit(index: number) {
+  //   photoswipe.open(rawImages, index, (index) => {
+  //     return element.querySelectorAll('[data-masonry-image]')[index];
+  //   });
+  // }
 
   onMount(() => {
     width = element.getBoundingClientRect().width;
@@ -53,6 +53,7 @@
   });
 </script>
 
+<!-- on:click={() => photoswipeInit(image.index)} -->
 <div class="max-w-full {isResizing ? 'overflow-hidden' : ''}">
   <div data-resizer bind:this={element}>
     <div class="flex flex-wrap" style="width: {width}px">
@@ -60,13 +61,16 @@
         <div
           class="relative bg-neutral-800"
           style={makeStyle(image)}
-          on:click={() => photoswipeInit(image.index)}
+          on:click={() =>
+            photoswipe.open(rawImages, image.index, (index) => {
+              return element.querySelectorAll('[data-masonry-image]')[index];
+            })}
         >
           <LazyImage src={image.msrc} />
-          <slot {image} />
+          <!-- add overlay etc here -->
         </div>
       {/each}
     </div>
   </div>
 </div>
-<PhotoswipeTemplate />
+<Photoswipe bind:this={photoswipe} />
