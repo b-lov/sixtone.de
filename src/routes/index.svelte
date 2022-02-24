@@ -9,6 +9,7 @@
 </script>
 
 <!-- TODO: make better use of IntersectionObserver to observe all sections with one instance. -->
+<!-- TODO put scroll margin top on sections so they not hidden by header -->
 {#each $pageSections as section}
   <section
     use:useViewport={{ rootMargin: '-50%' }}
