@@ -1,18 +1,21 @@
 <script lang="ts">
   import Home from '$lib/components/Sections/Home/_Home.svelte';
-  import Team from '$lib/components/Sections/Team/_Team.svelte';
-  import { pageSections, currentSection } from '$lib/stores';
-  // TODO: make better use of IntersectionObserver to observe all sections with one instance.
-  import { useViewport } from '$lib/actions';
   import SectionHeading from '$lib/components/Sections/SectionHeading.svelte';
+  import Team from '$lib/components/Sections/Team/_Team.svelte';
+  import Gallery from '$lib/components/Sections/Gallery/_Gallery.svelte';
+
+  import { pageSections, currentSection } from '$lib/stores';
+  import { useViewport } from '$lib/actions';
 </script>
 
-{#each $pageSections as section, i}
+<!-- TODO: make better use of IntersectionObserver to observe all sections with one instance. -->
+<!-- TODO put scroll margin top on sections so they not hidden by header -->
+{#each $pageSections as section}
   <section
-    id={section}
-    class="h-0 min-h-screen flex flex-col"
     use:useViewport={{ rootMargin: '-50%' }}
     on:enterViewport={({ detail }) => currentSection.set(detail.target.id)}
+    id={section}
+    class="min-h-screen flex flex-col"
   >
     {#if section === 'Home'}
       <Home />
@@ -20,6 +23,8 @@
       <SectionHeading {section} />
       {#if section === 'Team'}
         <Team />
+      {:else if section === 'Gallerie'}
+        <Gallery />
       {:else}
         <div class="h-full" />
       {/if}

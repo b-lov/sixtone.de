@@ -8,7 +8,7 @@
 <div class="absolute w-full h-full top-0">
   <div class="relative w-full h-full overflow-hidden">
     <div
-      class=" absolute w-full h-full bg-cover bg-blend-multiply bg-fixed bg-center scale-110"
+      class=" absolute w-full h-full bg-cover bg-fixed bg-center scale-110"
       style="background-image: url(/images/{imagePath}.jpg);"
     />
     <div class="absolute h-full w-full bg-neutral-900" style="opacity: {opacity};" />

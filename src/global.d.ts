@@ -7,3 +7,19 @@ declare namespace svelte.JSX {
     onexitViewport?: (e: CustomEvent) => void;
   }
 }
+
+declare module '*&imagetools' {
+  /**
+   * actual types
+   * - code https://github.com/JonasKruckenberg/imagetools/blob/main/packages/core/src/output-formats.ts
+   * - docs https://github.com/JonasKruckenberg/imagetools/blob/main/docs/guide/getting-started.md#metadata
+   */
+  const out;
+  export default out;
+}
+
+declare module 'element-resize-event';
+
+declare module 'photoswipe';
+
+declare module 'photoswipe/dist/photoswipe-ui-default';
