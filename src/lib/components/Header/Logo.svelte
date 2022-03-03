@@ -4,6 +4,11 @@
   const viewBox: string = '0 0 478 293';
 </script>
 
-<svg {viewBox} fill="white" class="h-full">
+<svg
+  {viewBox}
+  fill="white"
+  class="h-full cursor-pointer"
+  on:click={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+>
   {@html path}
 </svg>
