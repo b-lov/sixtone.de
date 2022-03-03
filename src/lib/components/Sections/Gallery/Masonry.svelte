@@ -31,12 +31,6 @@
     return `height:${scaledHeight}px; flex: ${flex}; margin-right:${mr}; margin-bottom: ${mb}`;
   }
 
-  // function photoswipeInit(index: number) {
-  //   photoswipe.open(rawImages, index, (index) => {
-  //     return element.querySelectorAll('[data-masonry-image]')[index];
-  //   });
-  // }
-
   onMount(() => {
     width = element.getBoundingClientRect().width;
     const resizedFinished = debounce(() => {
@@ -53,7 +47,6 @@
   });
 </script>
 
-<!-- on:click={() => photoswipeInit(image.index)} -->
 <div class="max-w-full {isResizing ? 'overflow-hidden' : ''}">
   <div data-resizer bind:this={element}>
     <div class="flex flex-wrap" style="width: {width}px">
