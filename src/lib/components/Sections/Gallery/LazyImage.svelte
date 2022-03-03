@@ -2,20 +2,12 @@
   import { onMount } from 'svelte';
   import whenElementVisible from './when-element-visible';
 
-  const cache = {};
-
-  function onLoad() {
-    cache[src] = true;
-    isLoaded = true;
-  }
-
-  // props
   export let src = '';
   export let srcset = '';
   // TODO: pass title here
   export let alt = '';
 
-  // state
+  const cache = {};
   let element: HTMLElement;
   let isLoaded = false;
   let isVisible = false;
@@ -25,15 +17,16 @@
     isVisible = true;
   }
 
-  onMount(() => {
-    if (isLoaded) {
-      return;
-    }
+  function onLoad() {
+    cache[src] = true;
+    isLoaded = true;
+  }
 
+  onMount(() => {
+    if (isLoaded) return;
     const disconnect = whenElementVisible(element, () => {
       isVisible = true;
     });
-
     return () => {
       disconnect();
     };
@@ -42,37 +35,24 @@
 
 <div
   data-masonry-image
-  class="lazy-image-container {isLoaded ? 'is-loaded' : ''}"
+  class="relative group w-full h-full block transition-opacity duration-300 overflow-hidden"
+  style="opacity: {isLoaded ? '1' : '0'};"
   bind:this={element}
 >
   {#if isVisible}
-    <img class="lazy-image {isLoaded ? 'is-loaded' : ''}" on:load={onLoad} {src} {srcset} {alt} />
+    <img
+      class="absolute w-full h-full group-hover:scale-105 transition duration-500"
+      style="opacity: {isLoaded ? '1' : '0'};"
+      on:load={onLoad}
+      {src}
+      {srcset}
+      {alt}
+    />
+    <div
+      class="
+        absolute w-full h-full bg-neutral-900 opacity-40 group-hover:opacity-0 transition
+        duration-500
+      "
+    />
   {/if}
 </div>
-
-<style lang="postcss">
-  .lazy-image-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    display: block;
-
-    transition: opacity 300ms ease-in-out;
-    opacity: 0;
-  }
-
-  .is-loaded {
-    opacity: 1;
-  }
-
-  /* .lazy-image-container .is-instant {
-    opacity: 1;
-    transition: none;
-  } */
-
-  .lazy-image {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-</style>
