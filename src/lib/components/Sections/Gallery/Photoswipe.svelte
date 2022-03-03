@@ -36,7 +36,6 @@
       }
     });
     gallery.init();
-
     return gallery;
   }
 </script>
