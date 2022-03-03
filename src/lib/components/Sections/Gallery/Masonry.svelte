@@ -52,7 +52,7 @@
     <div class="flex flex-wrap" style="width: {width}px">
       {#each scaledImages as image}
         <div
-          class="relative bg-neutral-800"
+          class="relative bg-neutral-800 cursor-pointer"
           style={makeStyle(image)}
           on:click={() =>
             photoswipe.open(rawImages, image.index, (index) => {
