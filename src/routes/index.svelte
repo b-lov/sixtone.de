@@ -3,19 +3,19 @@
   import SectionHeading from '$lib/components/Sections/SectionHeading.svelte';
   import Team from '$lib/components/Sections/Team/_Team.svelte';
   import Gallery from '$lib/components/Sections/Gallery/_Gallery.svelte';
+  import Events from '$lib/components/Sections/Events/_Events.svelte';
 
   import { pageSections, currentSection } from '$lib/stores';
   import { useViewport } from '$lib/actions';
 </script>
 
 <!-- TODO: make better use of IntersectionObserver to observe all sections with one instance. -->
-<!-- TODO put scroll margin top on sections so they not hidden by header -->
 {#each $pageSections as section}
   <section
     use:useViewport={{ rootMargin: '-50%' }}
     on:enterViewport={({ detail }) => currentSection.set(detail.target.id)}
     id={section}
-    class="min-h-screen flex flex-col"
+    class="min-h-screen flex flex-col scroll-mt-16"
   >
     {#if section === 'Home'}
       <Home />
@@ -23,10 +23,10 @@
       <SectionHeading {section} />
       {#if section === 'Team'}
         <Team />
+      {:else if section === 'Events'}
+        <Events />
       {:else if section === 'Gallerie'}
         <Gallery />
-      {:else}
-        <div class="h-full" />
       {/if}
     {/if}
   </section>
