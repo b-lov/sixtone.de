@@ -3,7 +3,7 @@
 
   const events = [
     {
-      date: '12. Dezember, 2022',
+      date: '14. Dezember, 2022',
       location: 'Mönchengladbach',
       venue: 'Gay Bar',
       name: 'Musikfestival'
