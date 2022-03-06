@@ -5,6 +5,7 @@
   import Gallery from '$lib/components/Sections/Gallery/_Gallery.svelte';
   import Events from '$lib/components/Sections/Events/_Events.svelte';
   import News from '$lib/components/Sections/News/_News.svelte';
+  import Feedback from '$lib/components/Sections/Feedback/_Feedback.svelte';
 
   import { pageSections, currentSection } from '$lib/stores';
   import { useViewport } from '$lib/actions';
@@ -28,6 +29,8 @@
         <Events />
       {:else if section === 'Gallerie'}
         <Gallery />
+      {:else if section === 'Feedback'}
+        <Feedback />
       {:else if section === 'News'}
         <News />
       {/if}
