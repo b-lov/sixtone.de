@@ -4,7 +4,7 @@
 
 <form
   class="
-    flex-1 flex flex-col justify-center px-12 gap-8 bg-[url('images/contactbg2.jpg')]
+    flex-1 flex flex-col justify-center px-12 gap-8 bg-[url('images/contactbg.jpg')]
     bg-cover bg-neutral-900/80 bg-blend-multiply bg-fixed items-start 
   "
 >
