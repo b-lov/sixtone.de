@@ -11,6 +11,7 @@
   import { pageSections, currentSection } from '$lib/stores';
   import { useViewport } from '$lib/actions';
   import Partner from '$lib/components/Sections/Partner/_Partner.svelte';
+  import Sounds from '$lib/components/Sections/Sounds/_Sounds.svelte';
 </script>
 
 <!-- TODO: make better use of IntersectionObserver to observe all sections with one instance. -->
@@ -39,6 +40,8 @@
         <News />
       {:else if section === 'Partner'}
         <Partner />
+      {:else if section === 'Sounds'}
+        <Sounds />
       {/if}
     {/if}
   </section>
