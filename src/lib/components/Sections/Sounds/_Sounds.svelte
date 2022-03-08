@@ -1,5 +1,6 @@
 <script lang="ts">
-  import sounds from './sounds';
+  import Player from './Player.svelte';
+  import tracks from './tracks';
 </script>
 
 <div class="flex items-center justify-center px-16">
@@ -7,12 +8,9 @@
     <div class="col-span-2">
       <img src="images/music.jpg" class="w-full h-full object-cover object-right" alt="" />
     </div>
-    <div class="col-span-3 flex flex-col gap-1">
-      {#each sounds as sound, i}
-        <div class="h-24 bg-neutral-800 py-4 px-6">
-          <h1 class="text-neutral-400 text-sm font-light">{i + 1}. {sound.name}</h1>
-        </div>
-      {/each}
+    <div class="col-span-3 flex flex-col gap-2">
+      {#each tracks as { name }}
+        <Player {name} />{/each}
     </div>
   </div>
 </div>
