@@ -27,3 +27,7 @@ export function debounce(func: () => void, timeout: number): () => void {
     }, timeout);
   };
 }
+
+export const mouseXPositionInElement = (event: MouseEvent, element: HTMLElement): number => {
+  return (event.clientX - element.getBoundingClientRect().left) / element.clientWidth;
+};
