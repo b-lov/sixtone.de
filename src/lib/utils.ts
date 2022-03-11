@@ -29,5 +29,12 @@ export function debounce(func: () => void, timeout: number): () => void {
 }
 
 export const mouseXPositionInElement = (event: MouseEvent, element: HTMLElement): number => {
-  return (event.clientX - element.getBoundingClientRect().left) / element.clientWidth;
+  const position = (event.clientX - element.getBoundingClientRect().left) / element.clientWidth;
+  if (position < 0) return 0;
+  if (position > 1) return 1;
+  return position;
+};
+
+export const secondsToMMSS = (time: number): string => {
+  return new Date(1000 * time).toISOString().substring(14, 19);
 };
