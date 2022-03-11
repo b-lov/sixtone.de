@@ -13,8 +13,8 @@
     class="flex justify-end items-center fixed bg-black/70 right-0 h-full z-10"
   >
     <div class="text-white flex flex-col items-start px-12 gap-2">
-      {#each $pageSections as section, i}
-        <NavMenuLink {section} flyDelay={i * 50} />
+      {#each $pageSections as { title }, i}
+        <NavMenuLink {title} flyDelay={i * 50} />
       {/each}
     </div>
   </div>

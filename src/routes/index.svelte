@@ -13,28 +13,28 @@
 </script>
 
 <!-- TODO: make better use of IntersectionObserver to observe all sections with one instance. -->
-{#each $pageSections as section}
+{#each $pageSections as { title }}
   <section
     use:useViewport={{ rootMargin: '-50%' }}
     on:enterViewport={({ detail }) => currentSection.set(detail.target.id)}
-    id={section}
+    id={title}
     class="scroll-mt-16"
   >
-    {#if section === 'Home'}
-      <Home />
-    {:else if section === 'Sounds'}
+    {#if title === 'Home'}
+      <svelte:component this={Home} />
+    {:else if title === 'Sounds'}
       <Sounds />
-    {:else if section === 'Events'}
+    {:else if title === 'Events'}
       <Events />
-    {:else if section === 'Gallerie'}
+    {:else if title === 'Gallerie'}
       <Gallerie />
-    {:else if section === 'News'}
+    {:else if title === 'News'}
       <News />
-    {:else if section === 'Feedback'}
+    {:else if title === 'Feedback'}
       <Feedback />
-    {:else if section === 'Partner'}
+    {:else if title === 'Partner'}
       <Partner />
-    {:else if section === 'Kontakt'}
+    {:else if title === 'Kontakt'}
       <Kontakt />
     {/if}
   </section>
