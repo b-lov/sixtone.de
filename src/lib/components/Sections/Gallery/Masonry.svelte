@@ -60,7 +60,6 @@
             })}
         >
           <LazyImage src={image.msrc} />
-          <!-- add overlay etc here -->
         </div>
       {/each}
     </div>
