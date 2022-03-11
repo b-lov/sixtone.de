@@ -10,11 +10,11 @@
         w-10 -ml-5 text-center select-none
       "
   style="
-        bottom: {125}%;
-        left: {tooltipPosition}%;
-        clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 65% 75%, 50% 100%, 35% 75%, 0% 75%);
-      "
-  transition:fade
+  bottom: {135}%;
+  left: {tooltipPosition}%;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 65% 75%, 50% 100%, 35% 75%, 0% 75%);
+  "
+  transition:fade={{ duration: 200 }}
 >
   {tooltipText}
 </div>
