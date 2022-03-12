@@ -10,7 +10,8 @@ import Kontakt from './Kontakt/_Kontakt.svelte';
 export default [
   {
     name: 'Home',
-    component: Home
+    component: Home,
+    background: 'home_bg'
   },
   {
     name: 'Sounds',
@@ -30,7 +31,8 @@ export default [
   },
   {
     name: 'Feedback',
-    component: Feedback
+    component: Feedback,
+    background: 'feedback_bg'
   },
   {
     name: 'Partner',
@@ -38,6 +40,7 @@ export default [
   },
   {
     name: 'Kontakt',
-    component: Kontakt
+    component: Kontakt,
+    background: 'contact_bg'
   }
 ];

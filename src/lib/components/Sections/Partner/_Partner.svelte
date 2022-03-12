@@ -4,7 +4,7 @@
 </script>
 
 <div class="flex-1">
-  <div class="grid grid-cols-2 p-16 gap-16">
+  <div class="grid grid-cols-2 px-16 gap-16">
     {#each partners as { name, picture, link }}
       <PartnerCard {name} {picture} {link} />
     {/each}

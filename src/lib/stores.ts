@@ -1,31 +1,4 @@
-import { readable, writable } from 'svelte/store';
-
-export const sectionData = readable([
-  {
-    title: 'Home'
-  },
-  {
-    title: 'Sounds'
-  },
-  {
-    title: 'Events'
-  },
-  {
-    title: 'Gallerie'
-  },
-  {
-    title: 'News'
-  },
-  {
-    title: 'Feedback'
-  },
-  {
-    title: 'Partner'
-  },
-  {
-    title: 'Kontakt'
-  }
-]);
+import { writable } from 'svelte/store';
 
 export const currentSection = writable();
 
