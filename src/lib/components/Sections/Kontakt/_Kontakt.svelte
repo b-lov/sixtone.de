@@ -3,10 +3,8 @@
 </script>
 
 <form
-  class="
-    flex-1 flex flex-col justify-center px-12 gap-8 bg-[url('images/contactbg.jpg')]
-    bg-cover bg-neutral-900/80 bg-blend-multiply bg-fixed items-start 
-  "
+  on:submit|preventDefault
+  class="relative flex-1 flex flex-col justify-center px-12 gap-8 items-start max-w-5xl mx-auto"
 >
   <div class="flex gap-3 w-full">
     <input type="text" name="Name" id="Name" placeholder="Name" />

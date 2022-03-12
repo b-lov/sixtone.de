@@ -1,15 +1,4 @@
-import { readable, writable } from 'svelte/store';
-
-export const pageSections = readable([
-  'Home',
-  'Sounds',
-  'Events',
-  'Gallerie',
-  'News',
-  'Feedback',
-  'Partner',
-  'Kontakt'
-]);
+import { writable } from 'svelte/store';
 
 export const currentSection = writable();
 

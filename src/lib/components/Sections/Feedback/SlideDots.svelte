@@ -4,7 +4,7 @@
   export let current;
 </script>
 
-<div class="z-[1] flex gap-2 items-center">
+<div class="flex gap-2 items-center">
   {#each dots as dot, i}
     <div
       class="

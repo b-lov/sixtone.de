@@ -7,9 +7,10 @@
 </script>
 
 <div
-  class={firstEvent
-    ? 'flex font-oswald uppercase text-neutral-500 w-full justify-between items-center border-neutral-700 px-10'
-    : 'flex text-neutral-500 w-full justify-between border-t-[0.5px] pt-6 border-neutral-700'}
+  class="
+    flex w-full text-neutral-300 justify-between border-neutral-500 items-center
+    {firstEvent ? 'font-oswald uppercase px-10' : 'border-t-[0.5px] pt-6 px-4'}
+  "
 >
   {#if firstEvent}
     <SuperDate {date} />

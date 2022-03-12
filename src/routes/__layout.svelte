@@ -11,7 +11,6 @@
   use:useViewport={{ rootMargin: '10% 0% -110% 0%' }}
   on:enterViewport={() => bigHeader.set(false)}
   on:exitViewport={() => bigHeader.set(true)}
-  class="bg-neutral-900"
 >
   <NavMenu />
   <Header />

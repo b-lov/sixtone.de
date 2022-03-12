@@ -41,7 +41,7 @@
 >
   {#if isVisible}
     <img
-      class="absolute w-full h-full group-hover:scale-105 transition duration-500"
+      class="absolute w-full h-full group-hover:scale-110 transition duration-1000"
       style="opacity: {isLoaded ? '1' : '0'};"
       on:load={onLoad}
       {src}
@@ -50,8 +50,8 @@
     />
     <div
       class="
-        absolute w-full h-full bg-neutral-900 opacity-40 group-hover:opacity-0 transition
-        duration-500
+        absolute w-full h-full bg-neutral-800 opacity-60 group-hover:opacity-0 transition
+        duration-700
       "
     />
   {/if}
