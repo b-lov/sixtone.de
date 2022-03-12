@@ -1,6 +1,6 @@
 import { readable, writable } from 'svelte/store';
 
-export const pageSections = readable([
+export const sectionData = readable([
   {
     title: 'Home'
   },
