@@ -15,8 +15,8 @@
 <div style="background-image: url({picture});" class="shadow-lg bg-top bg-cover">
   <div
     class="
-          w-full h-full flex flex-col justify-center items-center p-8 bg-neutral-800
-          bg-opacity-80 text-neutral-400 gap-8
+          w-full h-full flex flex-col justify-center items-center px-8 py-12 bg-neutral-800
+          bg-opacity-80 text-neutral-400 gap-16
         "
   >
     <div class="flex flex-col items-center gap-2">

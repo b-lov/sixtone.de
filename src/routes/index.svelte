@@ -7,18 +7,21 @@
 </script>
 
 <!-- TODO: make better use of IntersectionObserver to observe all sections with one instance. -->
-{#each sectionComponents as { name, component, background }}
+{#each sectionComponents as { name, component, backgroundImage, subtitle }}
   <section
     use:useViewport={{ rootMargin: '-50%' }}
     on:enterViewport={({ detail }) => currentSection.set(detail.target.id)}
     id={name}
-    class="scroll-mt-16 relative {!background && 'bg-neutral-900'}"
+    class="
+      scroll-mt-16 relative bg-neutral-900 
+      {name !== 'Home' && name !== 'Gallerie' && 'pb-24'}
+    "
   >
-    {#if background}
-      <DynamicBackground image={background} />
+    {#if backgroundImage}
+      <DynamicBackground image={backgroundImage} />
     {/if}
     {#if name !== 'Home'}
-      <SectionHeading {name} />
+      <SectionHeading {name} {subtitle} />
     {/if}
     <svelte:component this={component} />
   </section>

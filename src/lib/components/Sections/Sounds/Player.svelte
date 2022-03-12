@@ -70,6 +70,6 @@
 
 <style lang="postcss">
   span {
-    @apply text-xs text-neutral-300 w-9 tracking-wide select-none;
+    @apply text-xs text-neutral-300 w-9 tracking-wide select-none cursor-default;
   }
 </style>

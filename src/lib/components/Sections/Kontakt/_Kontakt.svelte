@@ -4,7 +4,7 @@
 
 <form
   on:submit|preventDefault
-  class="relative flex-1 flex flex-col justify-center px-12 gap-8 items-start"
+  class="relative flex-1 flex flex-col justify-center px-12 gap-8 items-start max-w-5xl mx-auto"
 >
   <div class="flex gap-3 w-full">
     <input type="text" name="Name" id="Name" placeholder="Name" />

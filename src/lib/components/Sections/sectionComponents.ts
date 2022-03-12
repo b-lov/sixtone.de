@@ -11,36 +11,44 @@ export default [
   {
     name: 'Home',
     component: Home,
-    background: 'home_bg'
+    backgroundImage: 'home_bg'
   },
   {
     name: 'Sounds',
+    subtitle: 'So klingt Sixtone',
     component: Sounds
   },
   {
     name: 'Events',
-    component: Events
+    subtitle: 'Bevorstehende Auftritte',
+    component: Events,
+    backgroundImage: 'events_bg'
   },
   {
     name: 'Gallerie',
+    subtitle: 'Fotos & Videos',
     component: Gallerie
   },
   {
     name: 'News',
+    subtitle: 'Aus der Welt von Sixtone',
     component: News
   },
   {
     name: 'Feedback',
+    subtitle: 'Das denken unsere Kunden',
     component: Feedback,
-    background: 'feedback_bg'
+    backgroundImage: 'feedback_bg'
   },
   {
     name: 'Partner',
+    subtitle: 'Zusammen sind wir stark',
     component: Partner
   },
   {
     name: 'Kontakt',
+    subtitle: 'Wir freuen uns auf Deine Nachricht',
     component: Kontakt,
-    background: 'contact_bg'
+    backgroundImage: 'contact_bg'
   }
 ];
