@@ -10,6 +10,8 @@
 <button
   in:fly={{ x: 300, delay: flyDelay, opacity: 1 }}
   on:click={() => {
+    // polyfill for safari
+    // https://github.com/iamdustan/smoothscroll/blob/master/src/smoothscroll.js
     document.getElementById(name).scrollIntoView({
       behavior: 'smooth'
     });
