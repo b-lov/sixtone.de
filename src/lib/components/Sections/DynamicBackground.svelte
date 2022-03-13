@@ -5,7 +5,6 @@
     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAABRJREFUGFdjZGBg+M/AwMDIyAAFAA4pAQP4L554AAAAAElFTkSuQmCC';
 </script>
 
-<!-- on:mouseenter={() => console.log('hello worlds')} -->
 <div
   class="absolute w-full h-full bg-cover bg-center bg-fixed"
   style="background-image: url(images/backgrounds/{image}.jpg);"
