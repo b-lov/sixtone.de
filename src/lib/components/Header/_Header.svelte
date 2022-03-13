@@ -18,7 +18,7 @@
   >
     <div class="flex flex-row items-center gap-10 grow basis-0">
       <Icons
-        search
+        name="search"
         size={1.5}
         class="fill-white hover:scale-125 transition-transform cursor-pointer"
       />

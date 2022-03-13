@@ -7,7 +7,7 @@
 
 <div class="py-16 text-neutral-300 text-center relative">
   <div class="flex items-center justify-center">
-    <Icons sounds size={2} class="stroke-2 stroke-neutral-300" />
+    <Icons name="sounds" size={2} class="stroke-2 stroke-neutral-300" />
     <h1 class="text-5xl tracking-widest font-medium first-letter:text-accent p-2">
       {name}
     </h1>

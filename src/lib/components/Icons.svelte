@@ -1,7 +1,7 @@
 <script lang="ts">
-  // export let name: string;
+  export let name: string;
   export let size: number = 1;
-  const name = Object.keys($$props)[0];
+  // const name = Object.keys($$props)[0];
   type iconType = Record<'name' | 'viewBox' | 'svg', string>;
   const icons: iconType[] = [
     {
