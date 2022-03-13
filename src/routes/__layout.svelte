@@ -14,6 +14,8 @@
 >
   <NavMenu />
   <Header />
-  <slot />
+  <main class="bg-neutral-900 text-neutral-300">
+    <slot />
+  </main>
   <Footer />
 </div>
