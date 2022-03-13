@@ -7,14 +7,13 @@
 </script>
 
 <!-- TODO: make better use of IntersectionObserver to observe all sections with one instance. -->
+<!-- scrollmargintop not working when section is relative??? -->
 {#each sectionComponents as { name, component, backgroundImage, subtitle }}
   <section
     use:useViewport={{ rootMargin: '-50%' }}
     on:enterViewport={({ detail }) => currentSection.set(detail.target.id)}
     id={name}
-    class="relative overflow-hidden scroll-mt-16 {name !== 'Home' &&
-      name !== 'Gallerie' &&
-      'pb-24'}"
+    class="scroll-mt-16 relative {name !== 'Home' && name !== 'Gallerie' && 'pb-24'}"
   >
     {#if backgroundImage}
       <DynamicBackground image={backgroundImage} />
