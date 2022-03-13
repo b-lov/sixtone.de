@@ -12,10 +12,9 @@
     use:useViewport={{ rootMargin: '-50%' }}
     on:enterViewport={({ detail }) => currentSection.set(detail.target.id)}
     id={name}
-    class="
-      scroll-mt-16 relative bg-neutral-900 
-      {name !== 'Home' && name !== 'Gallerie' && 'pb-24'}
-    "
+    class="relative overflow-hidden scroll-mt-16 {name !== 'Home' &&
+      name !== 'Gallerie' &&
+      'pb-24'}"
   >
     {#if backgroundImage}
       <DynamicBackground image={backgroundImage} />
