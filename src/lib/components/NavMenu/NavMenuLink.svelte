@@ -24,7 +24,7 @@
   <Icons
     {name}
     size={1.5}
-    class="stroke-1 fill-[none] {name === $currentSection ? 'stroke-accent' : 'stroke-neutral-300'}"
+    class="stroke-2 fill-[none] {name === $currentSection ? 'stroke-accent' : 'stroke-neutral-300'}"
   />
   {name}
   {#if underline}
