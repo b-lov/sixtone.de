@@ -8,15 +8,15 @@
 
 <svelte:window on:keydown={(event) => event.key === 'Escape' && navMenuOpen.set(false)} />
 {#if $navMenuOpen}
-  <div
+  <nav
     use:clickOutside={() => navMenuOpen.set(false)}
     transition:fly={{ x: 200 }}
-    class="flex justify-end items-center fixed bg-black/70 right-0 h-full z-10"
+    class="fixed flex justify-end items-center bg-black/70 right-0 h-full z-10"
   >
-    <div class="text-white flex flex-col items-start px-12 gap-2">
+    <div class="flex flex-col items-start px-12 gap-2">
       {#each sections as { name }, i}
         <NavMenuLink {name} flyDelay={i * 50} />
       {/each}
     </div>
-  </div>
+  </nav>
 {/if}
