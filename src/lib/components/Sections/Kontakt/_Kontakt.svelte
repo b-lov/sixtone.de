@@ -12,6 +12,7 @@
     <input type="tel" name="Tel" id="Tel" placeholder="Tel" />
   </div>
   <textarea name="Message" id="Message" cols="30" rows="8" placeholder="Nachricht" class="w-full" />
+  <!-- TODO: checkbox, hiermit bestätige ich... -->
   <Button text="senden" />
 </form>
 
