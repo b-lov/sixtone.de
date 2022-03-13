@@ -21,7 +21,7 @@
   }
   input,
   textarea {
-    @apply bg-black bg-opacity-0 border-0 border-b-2 border-neutral-500
+    @apply bg-black bg-opacity-0 border-0 border-b-2 border-neutral-500 transition duration-300
     placeholder:text-neutral-500 text-neutral-300 focus:ring-0 focus:border-accent;
   }
 </style>
