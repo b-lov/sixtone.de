@@ -20,7 +20,8 @@
 >
   <NavMenu />
   <Header />
-  <main class="bg-neutral-900 text-neutral-300">
+  <!-- if something goes wrong, remove overflow hidden here -->
+  <main class="bg-neutral-900 text-neutral-300 overflow-hidden">
     <slot />
   </main>
   <Footer />
