@@ -1,17 +1,18 @@
 <script lang="ts">
   import { fly } from 'svelte/transition';
   import { currentSection } from '$lib/stores';
+
   import Icons from '../Icons.svelte';
+
   export let name: string;
   export let flyDelay: number;
+
   let underline: boolean;
 </script>
 
 <button
   in:fly={{ x: 300, delay: flyDelay, opacity: 1 }}
   on:click={() => {
-    // polyfill for safari
-    // https://github.com/iamdustan/smoothscroll/blob/master/src/smoothscroll.js
     document.getElementById(name).scrollIntoView({
       behavior: 'smooth'
     });
