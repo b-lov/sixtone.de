@@ -21,12 +21,9 @@
     maxime laborum aut accusamus sequi nulla!
   </article>
 
-  <div class="grid grid-cols-2">
+  <div class="flex flex-wrap justify-evenly">
     {#each members as member, i}
-      <MemberCard
-        {member}
-        class={i === 2 && 'col-span-2 absolute top-[50%] left-[50%] -ml-[120px]'}
-      />
+      <MemberCard {member} />
     {/each}
   </div>
 </div>
