@@ -17,7 +17,8 @@ export default [
   {
     name: 'Band',
     subtitle: 'Wer wir sind',
-    component: Band
+    component: Band,
+    backgroundImage: 'home_bg'
   },
   {
     name: 'Sounds',
