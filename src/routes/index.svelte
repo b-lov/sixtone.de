@@ -7,7 +7,6 @@
 </script>
 
 <!-- TODO: make better use of IntersectionObserver to observe all sections with one instance. -->
-<!-- scrollmargintop not working when section is relative??? -->
 {#each sectionComponents as { name, component, backgroundImage, subtitle }}
   <section
     use:useViewport={{ rootMargin: '-50%' }}
