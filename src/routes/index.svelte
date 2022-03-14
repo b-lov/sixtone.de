@@ -16,7 +16,7 @@
     class="scroll-mt-16 relative {name !== 'Home' && name !== 'Gallerie' && 'pb-24'}"
   >
     {#if backgroundImage}
-      <DynamicBackground image={backgroundImage} />
+      <DynamicBackground image={backgroundImage} opacity={name === 'Band' ? 0.9 : 0.6} />
     {/if}
     {#if name !== 'Home'}
       <SectionHeading {name} {subtitle} />
