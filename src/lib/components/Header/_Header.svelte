@@ -17,15 +17,23 @@
     "
   >
     <div class="flex flex-row items-center gap-10 grow basis-0">
-      <Icons
-        name="search"
-        size={1.5}
-        class="fill-white hover:scale-125 transition-transform cursor-pointer"
-      />
       <SocialMediaIcons />
     </div>
     <Logo />
-    <div class="flex justify-end grow basis-0">
+    <div class="flex items-center gap-8 justify-end grow basis-0">
+      <button
+        on:click={() => {
+          document.getElementById('Kontakt').scrollIntoView({
+            behavior: 'smooth'
+          });
+        }}
+      >
+        <Icons
+          name="Kontakt"
+          size={1.5}
+          class="fill-[none] stroke-2 stroke-white hover:scale-125 hover:stroke-accent transition"
+        />
+      </button>
       <Hamburger />
     </div>
   </header>
