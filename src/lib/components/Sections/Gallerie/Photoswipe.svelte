@@ -2,7 +2,7 @@
   import 'photoswipe/dist/photoswipe.css';
   import 'photoswipe/dist/default-skin/default-skin.css';
   import PhotoSwipe from 'photoswipe';
-  import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default';
+  import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default.js';
 
   interface Image {
     src: string;
