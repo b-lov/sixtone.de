@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { mouseXPositionInElement } from '$lib/utils';
+  import { mouseXPositionInElement } from '$lib/utils/utils';
 
   import Icons from '$lib/components/Icons.svelte';
 
@@ -12,15 +12,13 @@
 
 <div class="w-1/3 flex items-center gap-1">
   <button on:click={() => (muted = !muted)}>
-    {#if muted}
+    {#key muted}
       <Icons
-        volume-muted
+        name={muted ? 'volume-muted' : 'volume'}
         class="fill-neutral-300 hover:fill-accent transition duration-300"
         size={1.2}
       />
-    {:else}
-      <Icons volume class="fill-neutral-300 hover:fill-accent transition duration-300" size={1.2} />
-    {/if}
+    {/key}
   </button>
   <div
     class="flex-1 flex cursor-pointer p-2"

@@ -1,4 +1,5 @@
 import Home from './Home/_Home.svelte';
+import Band from './Band/_Band.svelte';
 import Sounds from './Sounds/_Sounds.svelte';
 import Events from './Events/_Events.svelte';
 import Gallerie from './Gallerie/_Gallerie.svelte';
@@ -11,6 +12,12 @@ export default [
   {
     name: 'Home',
     component: Home,
+    backgroundImage: 'home_bg'
+  },
+  {
+    name: 'Band',
+    subtitle: 'Wer wir sind',
+    component: Band,
     backgroundImage: 'home_bg'
   },
   {

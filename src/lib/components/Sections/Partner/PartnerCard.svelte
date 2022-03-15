@@ -22,7 +22,7 @@
     >
       {name}
       <Icons
-        external_link
+        name="external_link"
         size={0.8}
         class="
           {flipped ? 'fill-accent' : 'fill-neutral-300'}

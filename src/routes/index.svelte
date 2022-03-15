@@ -7,18 +7,16 @@
 </script>
 
 <!-- TODO: make better use of IntersectionObserver to observe all sections with one instance. -->
+<!-- rename branch please -->
 {#each sectionComponents as { name, component, backgroundImage, subtitle }}
   <section
     use:useViewport={{ rootMargin: '-50%' }}
     on:enterViewport={({ detail }) => currentSection.set(detail.target.id)}
     id={name}
-    class="
-      scroll-mt-16 relative bg-neutral-900 
-      {name !== 'Home' && name !== 'Gallerie' && 'pb-24'}
-    "
+    class="relative {name !== 'Home' && name !== 'Gallerie' && 'pb-24'}"
   >
     {#if backgroundImage}
-      <DynamicBackground image={backgroundImage} />
+      <DynamicBackground image={backgroundImage} opacity={name === 'Band' ? 0.9 : 0.6} />
     {/if}
     {#if name !== 'Home'}
       <SectionHeading {name} {subtitle} />
