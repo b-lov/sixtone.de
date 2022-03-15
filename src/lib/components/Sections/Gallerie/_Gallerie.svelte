@@ -1,25 +1,30 @@
 <script lang="ts">
+  import imageData from './image-data';
   import Masonry from './Masonry.svelte';
-  const allImages = import.meta.glob('/static/images/gallery/*.jpg');
+  // const allImages = import.meta.globEager('/static/images/gallery/*.jpg');
+  // const imageArray = Object.keys(allImages).map((key) => {
+  //   return `${key}?meta&imagetools`;
+  // });
 
-  const getImages = async () => {
-    const Images = [];
-    for (let image in allImages) {
-      const dataPath = `${image}?meta&imagetools`;
-      await import(/* @vite-ignore */ dataPath).then(({ width, height }) => {
-        Images.push({
-          src: image,
-          msrc: image.replace('gallery/', 'gallery/small/'),
-          w: width,
-          h: height,
-          title: 'Lorem ipsum dolor'
-        });
-      });
-    }
-    return Images;
-  };
+  // const getImages = async () => {
+  //   const Images = [];
+  //   for (const image of imageArray) {
+  //     await import(image).then(({ width, height }) => {
+  //       Images.push({
+  //         src: image,
+  //         msrc: image.replace('gallery/', 'gallery/small/'),
+  //         w: width,
+  //         h: height,
+  //         title: 'Lorem ipsum dolor'
+  //       });
+  //     });
+  //   }
+  //   return Images;
+  // };
 </script>
 
-{#await getImages() then rawImages}
+<Masonry rawImages={imageData} />
+<!-- {#await getImages() then rawImages}
+  {console.log(rawImages)}
   <Masonry {rawImages} targetRowHeight={300} />
-{/await}
+{/await} -->
