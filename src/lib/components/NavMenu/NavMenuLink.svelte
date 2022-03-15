@@ -13,7 +13,9 @@
 <button
   in:fly={{ x: 300, delay: flyDelay, opacity: 1 }}
   on:click={() => {
-    document.getElementById(name).scrollIntoView({
+    window.scrollTo({
+      // section - header height
+      top: document.getElementById(name).getBoundingClientRect().top + window.pageYOffset - 64,
       behavior: 'smooth'
     });
   }}
