@@ -10,7 +10,7 @@
 
 <button
   id="Hamburger"
-  class="w-10 h-8 flex flex-col justify-around items-end transition-all"
+  class="w-10 h-8 flex flex-col justify-around items-end transition-all {$$props.class}"
   class:pressed={$navMenuOpen}
   on:mouseenter={() => (hovering = true)}
   on:mouseleave={() => (hovering = false)}
@@ -24,7 +24,7 @@
 <style lang="postcss">
   span {
     @apply bg-white transition-all duration-200 ease-in-out origin-left;
-    height: 1px;
+    height: 2px;
   }
   .pressed span:nth-child(1) {
     width: 100%;
