@@ -31,7 +31,7 @@
         <Icons
           name="Kontakt"
           size={1.6}
-          class="hidden sm:block fill-[none] stroke-2 stroke-white hover:scale-125 hover:stroke-accent transition"
+          class="hidden sm:block fill-[none] stroke-2 stroke-neutral-300 hover:scale-125 hover:stroke-accent transition"
         />
       </button>
       <Hamburger class="md:mr-4" />

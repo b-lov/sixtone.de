@@ -23,7 +23,7 @@
 
 <style lang="postcss">
   span {
-    @apply bg-white transition-all duration-200 ease-in-out origin-left;
+    @apply bg-neutral-300 transition-all duration-200 ease-in-out origin-left;
     height: 2px;
   }
   .pressed span:nth-child(1) {

@@ -23,7 +23,7 @@
       rel="noopener noreferrer"
       class="h-16 w-16 md:w-14 flex items-center justify-center bg-neutral-800 md:bg-transparent"
     >
-      <Icons {name} size={1.2} class="fill-white hover:fill-accent transition-colors" />
+      <Icons {name} size={1.2} class="fill-neutral-300 hover:fill-accent transition-colors" />
     </a>
   {/each}
   <button
@@ -38,7 +38,7 @@
       <Icons
         size={1.5}
         name={expanded ? 'up-arrow' : 'link'}
-        class="stroke-white stroke-2 fill-[none] transition"
+        class="stroke-neutral-300 stroke-2 fill-[none] transition"
       />
     {/key}
   </button>
