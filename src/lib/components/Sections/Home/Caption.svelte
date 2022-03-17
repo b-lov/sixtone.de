@@ -11,8 +11,8 @@
 
 <div
   class="
-    flex flex-row gap-4 tracking-[.25em] font-oswald text-4xl uppercase text-white
-    font-extralight
+    flex flex-row flex-wrap justify-center gap-4 tracking-[.25em] font-oswald text-4xl uppercase
+    text-neutral-300 font-extralight
   "
 >
   {#each caption as { text, fat, accent }}
