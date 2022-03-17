@@ -2,6 +2,6 @@
   export let text: string;
 </script>
 
-<div class="text-neutral-300 italic h-60 flex items-center">
+<div class="text-neutral-300 italic min-h-[10rem] flex items-center py-8">
   {text}
 </div>
