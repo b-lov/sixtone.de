@@ -12,7 +12,7 @@
     use:useViewport={{ rootMargin: '-50%' }}
     on:enterViewport={({ detail }) => currentSection.set(detail.target.id)}
     id={name}
-    class="relative {name !== 'Home' && name !== 'Gallerie' && 'pb-24'}"
+    class="relative {name !== 'Home' && name !== 'Gallerie' && name !== 'Sounds' && 'pb-24'}"
   >
     {#if backgroundImage}
       <DynamicBackground
