@@ -4,7 +4,7 @@
   import ScrollIndicator from './ScrollIndicator.svelte';
 </script>
 
-<div class="relative h-screen w-full flex items-center justify-between flex-col px-8">
+<div class="relative h-screen w-full flex items-center justify-between flex-col px-4">
   <BgStamp />
   <div id="dummy" class="h-64" />
   <Caption />
