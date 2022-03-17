@@ -4,9 +4,9 @@
 
 <form
   on:submit|preventDefault
-  class="relative flex-1 flex flex-col justify-center px-12 gap-8 items-start max-w-5xl mx-auto"
+  class="relative flex-1 flex flex-col justify-center px-4 gap-8 items-start max-w-5xl mx-auto"
 >
-  <div class="flex gap-3 w-full">
+  <div class="flex flex-col md:flex-row gap-3 w-full">
     <input type="text" name="Name" id="Name" placeholder="Name" />
     <input type="email" name="Email" id="Email" placeholder="E-Mail" />
     <input type="tel" name="Tel" id="Tel" placeholder="Tel" />
