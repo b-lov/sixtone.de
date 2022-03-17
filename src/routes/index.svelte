@@ -19,7 +19,7 @@
         image={backgroundImage}
         opacity={name === 'Band' ? 0.9 : 0.6}
         class={name === 'Home' || name === 'Band'
-          ? 'bg-[position:47%] bg-[length:201%] sm:bg-cover'
+          ? 'bg-[position:46%] bg-[length:201%] sm:bg-cover'
           : 'bg-cover bg-[position:30%] sm:bg-center'}
       />
     {/if}
