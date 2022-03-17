@@ -50,7 +50,7 @@
     />
     <div
       class="
-        absolute w-full h-full bg-neutral-800 opacity-60 group-hover:opacity-0 transition
+        absolute w-full h-full bg-neutral-800 opacity-0 md:opacity-70 group-hover:opacity-0 transition
         duration-700
       "
     />
