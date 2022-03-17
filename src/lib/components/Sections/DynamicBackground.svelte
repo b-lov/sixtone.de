@@ -6,7 +6,7 @@
 </script>
 
 <div
-  class="absolute w-full h-full bg-cover bg-center bg-fixed"
+  class="absolute w-full h-full bg-center bg-fixed bg-no-repeat bg-black {$$props.class}"
   style="background-image: url(images/backgrounds/{image}.jpg);"
 />
 <DotOverlay bgOpacity={opacity} />

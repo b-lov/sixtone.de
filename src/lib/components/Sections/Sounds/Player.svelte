@@ -1,3 +1,4 @@
+<!-- TODO: add touch controls -->
 <script lang="ts" context="module">
   const audioElements: Set<HTMLAudioElement> = new Set();
 </script>

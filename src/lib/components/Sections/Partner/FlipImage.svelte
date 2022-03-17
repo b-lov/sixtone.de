@@ -6,7 +6,7 @@
 
 <div class="scene">
   <div class="card" class:flipped>
-    <img src="images/partner/{picture}" alt={name} class="front" />
+    <img src="images/partner/{picture}" alt={name} class="front md:grayscale" />
     <img src="images/partner/{picture}" alt={name} class="back" />
   </div>
 </div>
@@ -29,7 +29,7 @@
     backface-visibility: hidden;
   }
   .front {
-    filter: grayscale(100%);
+    /* filter: grayscale(100%); */
   }
   .back {
     transform: rotateY(180deg);

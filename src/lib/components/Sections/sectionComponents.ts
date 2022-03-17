@@ -1,7 +1,7 @@
 import Home from './Home/_Home.svelte';
 import Band from './Band/_Band.svelte';
 import Sounds from './Sounds/_Sounds.svelte';
-import Events from './Events/_Events.svelte';
+// import Events from './Events/_Events.svelte';
 import Gallerie from './Gallerie/_Gallerie.svelte';
 import News from './News/_News.svelte';
 import Feedback from './Feedback/_Feedback.svelte';
@@ -25,12 +25,12 @@ export default [
     subtitle: 'So klingt Sixtone',
     component: Sounds
   },
-  {
-    name: 'Events',
-    subtitle: 'Bevorstehende Auftritte',
-    component: Events,
-    backgroundImage: 'events_bg'
-  },
+  // {
+  //   name: 'Events',
+  //   subtitle: 'Bevorstehende Auftritte',
+  //   component: Events,
+  //   backgroundImage: 'events_bg'
+  // },
   {
     name: 'Gallerie',
     subtitle: 'Fotos & Videos',

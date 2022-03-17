@@ -24,8 +24,8 @@
   });
 </script>
 
-<div class="relative flex-1 flex items-center max-w-7xl mx-auto">
-  <div class="w-full flex flex-col items-center px-24">
+<div class="relative flex-1 flex items-center max-w-5xl mx-auto">
+  <div class="w-full flex flex-col items-center px-4">
     <div class="grid grid-cols-1 grid-rows-1">
       {#key current}
         <div
