@@ -3,10 +3,8 @@
   import partners from './partners';
 </script>
 
-<div class="flex-1">
-  <div class="grid grid-cols-2 px-16 gap-16 max-w-5xl mx-auto">
-    {#each partners as { name, picture, link }}
-      <PartnerCard {name} {picture} {link} />
-    {/each}
-  </div>
+<div class="px-4 flex flex-wrap gap-8 max-w-4xl mx-auto">
+  {#each partners as { name, picture, link }}
+    <PartnerCard {name} {picture} {link} />
+  {/each}
 </div>
