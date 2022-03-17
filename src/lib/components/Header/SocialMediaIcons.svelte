@@ -10,9 +10,9 @@
 
 <div
   class="
-    {!expanded && `-translate-y-${16 * socialMediaLinks.length} md:translate-y-0`}
+    {!expanded && `-translate-y-64`}
     absolute top-0 left-0 flex flex-col items-center transition-transform
-    md:static md:flex-row
+    md:static md:flex-row md:translate-y-0
   "
   use:clickOutside={() => (expanded = false)}
 >
@@ -29,7 +29,7 @@
   <button
     class="
       {!expanded && $bigHeader ? 'h-24' : 'h-16'} {expanded && 'bg-neutral-800'}
-      w-16 flex items-center justify-center transition-all duration-300 rounded-b-3xl
+      w-16 flex items-center justify-center transition-all duration-300 rounded-b-full
       md:hidden
     "
     on:click={() => (expanded = !expanded)}
