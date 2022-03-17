@@ -4,8 +4,7 @@
 
 <svg
   viewBox="0 0 478 293"
-  fill="white"
-  class="cursor-pointer transition-all duration-300"
+  class="fill-neutral-300 cursor-pointer transition-all duration-300"
   height={$bigHeader ? '72' : '48'}
   on:click={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
 >

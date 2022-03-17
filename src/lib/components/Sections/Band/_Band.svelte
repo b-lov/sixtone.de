@@ -3,7 +3,7 @@
   import members from './members';
 </script>
 
-<div class="flex flex-col px-8 gap-16 relative max-w-5xl mx-auto">
+<div class="flex flex-col px-4 gap-16 relative max-w-5xl mx-auto">
   <article
     class="
       max-w-3xl mx-auto whitespace-normal prose text-neutral-400 first-letter:text-8xl

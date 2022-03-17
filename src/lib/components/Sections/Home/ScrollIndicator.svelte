@@ -1,4 +1,4 @@
-<div class="h-16">
+<div class="h-16 {$$props.class}">
   <div class="relative w-7 h-7 rotate-45">
     {#each [1, 2, 3] as item}
       <span
