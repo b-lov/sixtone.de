@@ -1,6 +1,7 @@
 <script lang="ts">
   import { fly } from 'svelte/transition';
   import { currentSection } from '$lib/stores';
+  import { navMenuOpen } from '$lib/stores';
 
   import Icons from '../Icons.svelte';
 
@@ -14,10 +15,11 @@
   in:fly={{ x: 300, delay: flyDelay, opacity: 1 }}
   on:click={() => {
     window.scrollTo({
-      // section - header height
+      // section - headerheight
       top: document.getElementById(name).getBoundingClientRect().top + window.pageYOffset - 64,
       behavior: 'smooth'
     });
+    navMenuOpen.set(false);
   }}
   class="
     relative flex items-center gap-4 text-3xl font-semibold tracking-widest transition-all
