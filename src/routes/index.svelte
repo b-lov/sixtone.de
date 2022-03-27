@@ -1,9 +1,17 @@
+<script context="module">
+  import WPData from '$lib/wp-data';
+  export const load = WPData;
+</script>
+
 <script lang="ts">
   import sectionComponents from '$lib/components/Sections/sectionComponents';
   import { currentSection } from '$lib/stores';
   import { useViewport } from '$lib/actions';
   import SectionHeading from '$lib/components/Sections/SectionHeading.svelte';
   import DynamicBackground from '$lib/components/Sections/DynamicBackground.svelte';
+
+  export let data;
+  console.log(data);
 </script>
 
 <!-- TODO: make better use of IntersectionObserver to observe all sections with one instance. -->
