@@ -3,7 +3,7 @@ const query = `
   query getMembers {
     bandmitglieder {
       nodes {
-        title
+        name: title
         role
         featuredImage {
           node {
@@ -26,10 +26,16 @@ export default async function (): Promise<Record<string, unknown>> {
 
   if (response.ok) {
     const responseObj = await response.json();
-    const data = responseObj.data.bandmitglieder.nodes;
+    const members = responseObj.data.bandmitglieder.nodes.map(({ name, role, featuredImage }) => {
+      return {
+        name,
+        role,
+        photo: featuredImage.node.sourceUrl
+      };
+    });
     return {
       props: {
-        data
+        members
       }
     };
   }

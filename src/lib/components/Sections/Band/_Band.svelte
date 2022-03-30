@@ -1,8 +1,8 @@
 <script lang="ts">
   import SectionWrapper from '../SectionWrapper.svelte';
   import MemberCard from './MemberCard.svelte';
-  import members from './members';
 
+  export let members;
   export let componentData;
 </script>
 

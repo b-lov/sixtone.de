@@ -1,27 +1,27 @@
 export default [
   {
     name: 'Sergio',
-    position: 'Schlagzeug',
+    role: 'Schlagzeug',
     photo: 'sergio'
   },
   {
     name: 'il Bass',
-    position: 'DJ, Bass',
+    role: 'DJ, Bass',
     photo: 'anton'
   },
   {
     name: 'Max',
-    position: 'Keys',
+    role: 'Keys',
     photo: 'max'
   },
   {
     name: 'Anastasia',
-    position: 'Gesang, Tanz',
+    role: 'Gesang, Tanz',
     photo: 'anastasia'
   },
   {
     name: 'Nightwind',
-    position: 'Gitarre, Gesang, Licht',
+    role: 'Gitarre, Gesang, Licht',
     photo: 'vlad'
   }
 ];
