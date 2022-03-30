@@ -9,7 +9,7 @@
 
 <a href={link} target="_blank">
   <div
-    class="flex flex-col gap-6 items-center"
+    class="flex flex-col gap-6 items-center min-w-[240px]"
     on:mouseenter={() => (flipped = true)}
     on:mouseleave={() => (flipped = false)}
   >
