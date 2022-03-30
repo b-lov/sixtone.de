@@ -4,29 +4,7 @@
   export let bgOpacity = 0;
 </script>
 
-<div class="absolute h-full w-full" style="background-color: rgb(23, 23, 23, {bgOpacity});">
-  <!-- <svg width="100%" height="100%">
-    <defs>
-      <pattern
-        id="polka-dots"
-        x="0"
-        y="0"
-        width={dotSize}
-        height={dotSize}
-        patternUnits="userSpaceOnUse"
-      >
-        <circle
-          fill="#black"
-          fill-opacity={dotOpacity}
-          cx={dotSize / 2}
-          cy={dotSize / 2}
-          r={dotSize / 3}
-        />
-      </pattern>
-    </defs>
-    <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)" />
-  </svg> -->
-</div>
+<div class="absolute h-full w-full" style="background-color: rgb(23, 23, 23, {bgOpacity});" />
 
 <style lang="postcss">
   div {

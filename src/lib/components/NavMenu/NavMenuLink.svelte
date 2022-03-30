@@ -5,7 +5,8 @@
 
   import Icons from '../Icons.svelte';
 
-  export let name: string;
+  export let id: string = '';
+  export let name: string = '';
   export let flyDelay: number;
 
   let underline: boolean;
@@ -16,22 +17,22 @@
   on:click={() => {
     window.scrollTo({
       // section - headerheight
-      top: document.getElementById(name).getBoundingClientRect().top + window.pageYOffset - 64,
+      top: document.getElementById(id).getBoundingClientRect().top + window.pageYOffset - 64,
       behavior: 'smooth'
     });
     navMenuOpen.set(false);
   }}
   class="
     relative flex items-center gap-4 text-3xl font-semibold tracking-widest transition-all
-    {name === $currentSection ? 'text-accent' : 'text-white'}
+    {id === $currentSection ? 'text-accent' : 'text-white'}
   "
   on:mouseenter={() => (underline = true)}
   on:mouseleave={() => (underline = false)}
 >
   <Icons
-    {name}
+    name={id}
     size={1.5}
-    class="stroke-2 fill-[none] {name === $currentSection ? 'stroke-accent' : 'stroke-neutral-300'}"
+    class="stroke-2 fill-[none] {id === $currentSection ? 'stroke-accent' : 'stroke-neutral-300'}"
   />
   {name}
   {#if underline}

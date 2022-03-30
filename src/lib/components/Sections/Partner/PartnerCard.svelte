@@ -7,7 +7,7 @@
   let flipped = false;
 </script>
 
-<a href={link} target="_blank" class="mx-auto">
+<a href={link} target="_blank">
   <div
     class="flex flex-col gap-6 items-center"
     on:mouseenter={() => (flipped = true)}

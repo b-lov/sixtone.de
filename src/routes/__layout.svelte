@@ -7,10 +7,11 @@
   import Footer from '$lib/components/Footer.svelte';
   import Header from '$lib/components/Header/_Header.svelte';
   import NavMenu from '$lib/components/NavMenu/_NavMenu.svelte';
+  import DynamicBackground from '$lib/components/Sections/DynamicBackground.svelte';
 </script>
 
 <svelte:head>
-  <script src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
+  <!-- <script src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script> -->
 </svelte:head>
 
 <div

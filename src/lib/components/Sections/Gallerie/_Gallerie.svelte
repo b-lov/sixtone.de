@@ -1,6 +1,10 @@
 <script lang="ts">
+  import SectionWrapper from '../SectionWrapper.svelte';
+
   import imageData from './image-data';
   import Masonry from './Masonry.svelte';
+
+  export let componentData;
   // const allImages = import.meta.globEager('/static/images/gallery/*.jpg');
   // const imageArray = Object.keys(allImages).map((key) => {
   //   return `${key}?meta&imagetools`;
@@ -23,8 +27,6 @@
   // };
 </script>
 
-<Masonry rawImages={imageData} />
-<!-- {#await getImages() then rawImages}
-  {console.log(rawImages)}
-  <Masonry {rawImages} targetRowHeight={300} />
-{/await} -->
+<SectionWrapper {componentData} sectionClass="pb-0" containerClass="max-w-none px-0">
+  <Masonry rawImages={imageData} />
+</SectionWrapper>

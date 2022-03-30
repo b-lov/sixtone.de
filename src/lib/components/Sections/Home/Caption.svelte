@@ -12,7 +12,7 @@
 <div
   class="
     flex flex-row flex-wrap justify-center gap-4 tracking-[.25em] font-oswald text-4xl uppercase
-    text-neutral-300 font-extralight
+    text-neutral-300 font-extralight relative
   "
 >
   {#each caption as { text, fat, accent }}
