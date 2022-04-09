@@ -1,7 +1,7 @@
 const endpoint: string = import.meta.env.VITE_PUBLIC_WORDPRESS_API_URL;
-const query = `
+const queryMembers = `
   query getMembers {
-    bandmitglieder {
+      bandmitglieder(where: {orderby: {order: ASC, field: TITLE}}) {
       nodes {
         name: title
         role
@@ -21,7 +21,7 @@ export default async function (): Promise<Record<string, unknown>> {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ query })
+    body: JSON.stringify({ query: queryMembers })
   });
 
   if (response.ok) {
