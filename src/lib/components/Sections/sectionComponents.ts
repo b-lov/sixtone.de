@@ -1,7 +1,7 @@
 import Home from './Home/_Home.svelte';
 import Band from './Band/_Band.svelte';
 import Sounds from './Sounds/_Sounds.svelte';
-// import Events from './Events/_Events.svelte';
+// // import Events from './Events/_Events.svelte';
 import Gallerie from './Gallerie/_Gallerie.svelte';
 import News from './News/_News.svelte';
 import Feedback from './Feedback/_Feedback.svelte';
@@ -10,52 +10,64 @@ import Kontakt from './Kontakt/_Kontakt.svelte';
 
 export default [
   {
-    name: 'Home',
     component: Home,
-    backgroundImage: 'home_bg'
+    id: 'Home',
+    name: 'Home',
+    subtitle: '',
+    bgImage: 'home_bg'
   },
   {
+    component: Band,
+    id: 'Band',
     name: 'Band',
     subtitle: 'Wer wir sind',
-    component: Band,
-    backgroundImage: 'home_bg'
+    bgImage: 'home_bg'
   },
   {
+    component: Sounds,
+    id: 'Sounds',
     name: 'Sounds',
     subtitle: 'So klingt Sixtone',
-    component: Sounds
+    bgImage: ''
   },
-  // {
-  //   name: 'Events',
-  //   subtitle: 'Bevorstehende Auftritte',
-  //   component: Events,
-  //   backgroundImage: 'events_bg'
-  // },
+  // // {
+  // //   name: 'Events',
+  // //   subtitle: 'Bevorstehende Auftritte',
+  // //   component: Events,
+  // //   backgroundImage: 'events_bg'
+  // // },
   {
+    component: Gallerie,
+    id: 'Gallerie',
     name: 'Gallerie',
     subtitle: 'Fotos & Videos',
-    component: Gallerie
+    bgImage: ''
   },
   {
+    component: News,
+    id: 'News',
     name: 'News',
     subtitle: 'Aus der Welt von Sixtone',
-    component: News
+    bgImage: ''
   },
   {
+    component: Feedback,
+    id: 'Feedback',
     name: 'Feedback',
     subtitle: 'Das denken unsere Kunden',
-    component: Feedback,
-    backgroundImage: 'feedback_bg'
+    bgImage: 'feedback_bg'
   },
   {
+    component: Partner,
+    id: 'Partner',
     name: 'Partner',
-    subtitle: 'Zusammen sind wir stark',
-    component: Partner
+    subtitle: 'Zusammen sind wir stark'
   },
   {
+    component: Kontakt,
+    id: 'Kontakt',
     name: 'Kontakt',
     subtitle: 'Wir freuen uns auf Deine Nachricht',
-    component: Kontakt,
-    backgroundImage: 'contact_bg'
+    bgImage: 'contact_bg'
   }
 ];

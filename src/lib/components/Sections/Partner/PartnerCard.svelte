@@ -1,15 +1,17 @@
 <script lang="ts">
   import Icons from '$lib/components/Icons.svelte';
   import FlipImage from './FlipImage.svelte';
+
   export let name;
   export let picture;
   export let link;
+
   let flipped = false;
 </script>
 
-<a href={link} target="_blank" class="mx-auto">
+<a href={link} target="_blank">
   <div
-    class="flex flex-col gap-6 items-center"
+    class="flex flex-col gap-6 items-center min-w-[240px]"
     on:mouseenter={() => (flipped = true)}
     on:mouseleave={() => (flipped = false)}
   >

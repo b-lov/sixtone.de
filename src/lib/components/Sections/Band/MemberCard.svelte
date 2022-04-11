@@ -3,8 +3,8 @@
 
   export let member;
 
-  let background = false;
-
+  const { name, role, photo } = member;
+  let hovering = false;
   const randomFly = () => {
     return (Math.random() - 0.5) * 2000;
   };
@@ -13,22 +13,23 @@
 <div class="flex flex-col items-center {$$props.class}">
   <div
     class="relative mb-3"
-    on:mouseenter={() => (background = true)}
-    on:mouseleave={() => (background = false)}
+    on:mouseenter={() => (hovering = true)}
+    on:mouseleave={() => (hovering = false)}
   >
-    {#if background}
+    {#if hovering}
       <div
         in:fly={{ y: randomFly(), x: randomFly() }}
         out:fly={{ y: randomFly(), x: randomFly() }}
         class="absolute rounded-full w-full h-full top-0 bg-accent/40"
       />
     {/if}
+    <!-- src="images/band/third/{member.photo}.png" -->
     <img
-      src="images/band/third/{member.photo}.png"
-      alt="{member.name} Photo"
+      src={photo}
+      alt="{name} Photo"
       class="w-72 h-72 object-contain rounded-full object-top shadow-lg relative"
     />
   </div>
-  <h1 class="font-oswald text-2xl text-neutral-200">{member.name}</h1>
-  <h2 class="text-neutral-400 text-sm">{member.position}</h2>
+  <h1 class="font-oswald text-2xl text-neutral-200">{name}</h1>
+  <h2 class="text-neutral-400 text-sm">{role}</h2>
 </div>

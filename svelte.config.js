@@ -1,6 +1,6 @@
 import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
-import { imagetools } from 'vite-imagetools';
+// import { imagetools } from 'vite-imagetools';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -13,12 +13,7 @@ const config = {
   ],
 
   kit: {
-    adapter: adapter(),
-
-    // hydrate the <div id="svelte"> element in src/app.html
-    vite: {
-      plugins: [imagetools()]
-    }
+    adapter: adapter()
   }
 };
 
