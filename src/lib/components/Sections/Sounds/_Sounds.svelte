@@ -1,8 +1,9 @@
 <script lang="ts">
   import SectionWrapper from '../SectionWrapper.svelte';
   import Player from './Player.svelte';
-  import tracks from './tracks';
+
   export let componentData;
+  export let sounds;
 </script>
 
 <SectionWrapper {componentData} sectionClass="pb-0">
@@ -13,8 +14,8 @@
         style="background-image: url('images/sounds/music.jpg');"
       />
       <div class="col-span-5 sm:col-span-3 flex flex-col gap-3">
-        {#each tracks as { name, src }}
-          <Player {name} {src} />
+        {#each sounds as { title, src }}
+          <Player {title} {src} />
         {/each}
       </div>
     </div>

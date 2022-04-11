@@ -1,17 +1,16 @@
 <script lang="ts">
-  import feedbacks from './feedbacks';
-  import { fly } from 'svelte/transition';
-  import { onMount } from 'svelte';
-
   import SlideDots from './SlideDots.svelte';
   import SlideText from './SlideText.svelte';
   import SlideAuthor from './SlideAuthor.svelte';
   import SectionWrapper from '../SectionWrapper.svelte';
+  import { fly } from 'svelte/transition';
+  import { onMount } from 'svelte';
 
   export let componentData;
+  export let feedbacks;
+
   let current = 0;
   const changeInterval = 5000;
-
   const changeSlide = () => {
     if (current === feedbacks.length - 1) {
       current = 0;

@@ -6,8 +6,8 @@
 
 <div class="scene">
   <div class="card" class:flipped>
-    <img src="images/partner/{picture}" alt={name} class="front md:grayscale" />
-    <img src="images/partner/{picture}" alt={name} class="back" />
+    <img src={picture} alt={name} class="front md:grayscale" />
+    <img src={picture} alt={name} class="back" />
   </div>
 </div>
 

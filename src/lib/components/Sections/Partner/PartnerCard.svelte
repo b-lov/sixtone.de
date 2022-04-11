@@ -1,9 +1,11 @@
 <script lang="ts">
   import Icons from '$lib/components/Icons.svelte';
   import FlipImage from './FlipImage.svelte';
+
   export let name;
   export let picture;
   export let link;
+
   let flipped = false;
 </script>
 

@@ -11,7 +11,7 @@ export default `
         }
       }
     }
-    sounds: mediaItems(where: {categoryName: "Sounds", orderby: {field: TITLE, order: ASC}}) {
+    sounds: mediaItems(where: {categoryName: "Sounds", orderby: {field: TITLE, order: DESC}}) {
       nodes {
         title
         src: mediaItemUrl

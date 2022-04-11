@@ -1,8 +1,8 @@
 <script lang="ts">
   import PartnerCard from './PartnerCard.svelte';
-  import partners from './partners';
   import SectionWrapper from '../SectionWrapper.svelte';
 
+  export let partners;
   export let componentData;
 </script>
 

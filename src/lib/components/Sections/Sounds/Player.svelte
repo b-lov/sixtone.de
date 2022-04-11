@@ -12,7 +12,7 @@
   import ProgressBar from './ProgressBar.svelte';
   import PlayingIndicator from './PlayingIndicator.svelte';
 
-  export let name: string;
+  export let title: string;
   export let src: string;
 
   let audio: HTMLAudioElement;
@@ -38,7 +38,7 @@
   <div class="flex items-center justify-between">
     <div class="flex items-center gap-2">
       <h1 class="text-neutral-300 font-light font-oswald uppercase tracking-wide">
-        {name}
+        {title}
       </h1>
       {#if !paused}
         <!-- content here -->
