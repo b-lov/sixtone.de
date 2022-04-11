@@ -3,7 +3,7 @@
 
   export let member;
 
-  let background = false;
+  let hovering = false;
 
   const randomFly = () => {
     return (Math.random() - 0.5) * 2000;
@@ -13,10 +13,10 @@
 <div class="flex flex-col items-center {$$props.class}">
   <div
     class="relative mb-3"
-    on:mouseenter={() => (background = true)}
-    on:mouseleave={() => (background = false)}
+    on:mouseenter={() => (hovering = true)}
+    on:mouseleave={() => (hovering = false)}
   >
-    {#if background}
+    {#if hovering}
       <div
         in:fly={{ y: randomFly(), x: randomFly() }}
         out:fly={{ y: randomFly(), x: randomFly() }}
