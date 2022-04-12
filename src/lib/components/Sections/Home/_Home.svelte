@@ -12,6 +12,7 @@
   {componentData}
   sectionClass="pb-0"
   backgroundClass="bg-[position:45%] bg-[length:200%] sm:bg-cover"
+  containerClass="max-w-none"
 >
   <div class="relative h-screen flex items-center justify-between flex-col">
     <BgStamp />
