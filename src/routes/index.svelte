@@ -1,9 +1,3 @@
-<script context="module">
-  import getData from '$lib/getData';
-
-  export const load = getData;
-</script>
-
 <script lang="ts">
   import sectionComponents from '$lib/components/Sections/sectionComponents';
   export let members;
