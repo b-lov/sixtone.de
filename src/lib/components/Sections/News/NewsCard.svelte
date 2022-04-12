@@ -12,7 +12,7 @@
   const { picture, title, datum, author, text } = newsItem;
 </script>
 
-<div class="max-w-sm shadow-lg bg-top bg-cover">
+<div style="background-image: url({picture});" class="max-w-sm shadow-lg bg-top bg-cover">
   <div
     class="
           w-full h-full flex flex-col justify-center items-center px-8 py-12 bg-neutral-800
