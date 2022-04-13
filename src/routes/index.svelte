@@ -9,8 +9,8 @@
 <Sections.Home componentData={sectionData.home} />
 <Sections.Band componentData={sectionData.band} {members} />
 <Sections.Sounds componentData={sectionData.sounds} {sounds} />
-<Sections.Gallerie componentData={sectionData.gallery} {images} />
+<Sections.Gallery componentData={sectionData.gallery} {images} />
 <Sections.News componentData={sectionData.news} />
 <Sections.Feedback componentData={sectionData.feedback} {feedbacks} />
-<Sections.Partner componentData={sectionData.partners} {partners} />
-<Sections.Kontakt componentData={sectionData.contact} />
+<Sections.Partners componentData={sectionData.partners} {partners} />
+<Sections.Contact componentData={sectionData.contact} />
