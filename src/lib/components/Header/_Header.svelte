@@ -23,7 +23,7 @@
     <div class="flex items-center gap-8 justify-end grow basis-0">
       <button
         on:click={() => {
-          document.getElementById('Kontakt').scrollIntoView({
+          document.getElementById('contact').scrollIntoView({
             behavior: 'smooth'
           });
         }}
