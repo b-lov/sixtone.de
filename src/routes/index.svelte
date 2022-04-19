@@ -14,7 +14,6 @@
     partnersData,
     contactData
   } = sectionData;
-  console.log(contactData);
 </script>
 
 <Sections.Home {homeData} />
