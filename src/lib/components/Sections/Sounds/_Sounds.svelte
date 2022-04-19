@@ -12,7 +12,7 @@
     <div class="w-full grid grid-cols-5 grid-rows-1 gap-3">
       <div
         class="hidden sm:block col-span-2 bg-cover bg-right"
-        style="background-image: url('images/sounds/music.jpg');"
+        style="background-image: url('https://admin.sixtone.de/wp-content/uploads/music-768x768.jpg');"
       />
       <div class="col-span-5 sm:col-span-3 flex flex-col gap-3">
         {#each tracks as { title, src }}
