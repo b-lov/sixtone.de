@@ -2,11 +2,16 @@
   import Button from '$lib/components/Button.svelte';
   import SectionWrapper from '../SectionWrapper.svelte';
 
-  export let componentData;
+  export let contactData;
+
+  const { id, name, subtitle, bgImage } = contactData;
 </script>
 
 <SectionWrapper
-  {componentData}
+  {id}
+  {name}
+  {subtitle}
+  {bgImage}
   containerClass="max-w-4xl"
   backgroundClass="bg-[position:38%] bg-[length:230%] sm:bg-cover"
 >

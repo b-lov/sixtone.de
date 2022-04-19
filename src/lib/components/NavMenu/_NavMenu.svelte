@@ -3,7 +3,8 @@
   import { navMenuOpen } from '$lib/stores';
   import { clickOutside } from '$lib/actions';
   import NavMenuLink from './NavMenuLink.svelte';
-  import sectionData from '$lib/components/Sections/sectionData';
+
+  export let sectionData: { [key: string]: Record<'name' | 'id', string> };
 </script>
 
 <svelte:window on:keydown={(event) => event.key === 'Escape' && navMenuOpen.set(false)} />
