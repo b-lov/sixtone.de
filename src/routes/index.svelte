@@ -1,30 +1,26 @@
-<script context="module">
-  import getData from '$lib/getData';
-
-  export const load = getData;
-</script>
-
 <script lang="ts">
-  import sectionComponents from '$lib/components/Sections/sectionComponents';
-  export let members;
-  export let sounds;
-  export let images;
-  export let feedbacks;
-  export let partners;
+  import * as Sections from '$lib/components/Sections';
+  import { getContext } from 'svelte';
+
+  const sectionData: { [key: string]: {} } = getContext('sectionData');
+
+  const {
+    homeData,
+    bandData,
+    soundsData,
+    galleryData,
+    newsData,
+    feedbackData,
+    partnersData,
+    contactData
+  } = sectionData;
 </script>
 
-{#each sectionComponents as componentData}
-  {#if componentData.id === 'Band'}
-    <svelte:component this={componentData.component} {componentData} {members} />
-  {:else if componentData.id === 'Sounds'}
-    <svelte:component this={componentData.component} {componentData} {sounds} />
-  {:else if componentData.id === 'Gallerie'}
-    <svelte:component this={componentData.component} {componentData} {images} />
-  {:else if componentData.id === 'Feedback'}
-    <svelte:component this={componentData.component} {componentData} {feedbacks} />
-  {:else if componentData.id === 'Partner'}
-    <svelte:component this={componentData.component} {componentData} {partners} />
-  {:else}
-    <svelte:component this={componentData.component} {componentData} />
-  {/if}
-{/each}
+<Sections.Home {homeData} />
+<Sections.Band {bandData} />
+<Sections.Sounds {soundsData} />
+<Sections.Gallery {galleryData} />
+<Sections.News {newsData} />
+<Sections.Feedback {feedbackData} />
+<Sections.Partners {partnersData} />
+<Sections.Contact {contactData} />

@@ -1,17 +1,27 @@
+<script lang="ts" context="module">
+  export async function load({ fetch }) {
+    const res = await fetch('/data');
+    const data = await res.json();
+    return { props: { sectionData: data.sectionData } };
+  }
+</script>
+
 <script lang="ts">
   import '../app.css';
-
-  import { bigHeader } from '$lib/stores';
-  import { useViewport } from '$lib/actions';
-
   import Footer from '$lib/components/Footer.svelte';
   import Header from '$lib/components/Header/_Header.svelte';
   import NavMenu from '$lib/components/NavMenu/_NavMenu.svelte';
-  import DynamicBackground from '$lib/components/Sections/DynamicBackground.svelte';
+  import { bigHeader } from '$lib/stores';
+  import { useViewport } from '$lib/actions';
+  import { setContext } from 'svelte';
+
+  export let sectionData;
+  setContext('sectionData', sectionData);
 </script>
 
 <svelte:head>
-  <!-- <script src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script> -->
+  <!-- TODO: get node module -->
+  <script src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
 </svelte:head>
 
 <div
@@ -19,9 +29,8 @@
   on:enterViewport={() => bigHeader.set(false)}
   on:exitViewport={() => bigHeader.set(true)}
 >
-  <NavMenu />
+  <NavMenu {sectionData} />
   <Header />
-  <!-- if something goes wrong, remove overflow hidden here -->
   <main class="bg-neutral-900 text-neutral-300 overflow-hidden">
     <slot />
   </main>

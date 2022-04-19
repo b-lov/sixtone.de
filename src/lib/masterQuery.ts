@@ -1,5 +1,18 @@
 export default `
   query masterQuery {
+    sections: abschnitte {
+      nodes {
+        id: elementId
+        subtitle: untertitel
+        name: title,
+        content,
+        bgImage: featuredImage {
+          node {
+            mediaItemUrl
+          }
+        }
+      }
+    }
     members: bandmitglieder(where: {orderby: {field: TITLE, order: ASC}}) {
       nodes {
         name: title

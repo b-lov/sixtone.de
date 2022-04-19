@@ -2,31 +2,27 @@
   import SectionWrapper from '../SectionWrapper.svelte';
   import MemberCard from './MemberCard.svelte';
 
-  export let members;
-  export let componentData;
+  export let bandData;
+
+  const { id, name, bgImage, subtitle, members, content } = bandData;
 </script>
 
 <SectionWrapper
-  {componentData}
+  {id}
+  {name}
+  {subtitle}
+  {bgImage}
   backgroundClass="bg-[position:45%] bg-[length:200%] sm:bg-cover"
   bgOpacity={0.9}
 >
   <div class="relative flex flex-col gap-16">
     <article
       class="
-        max-w-3xl mx-auto whitespace-normal prose text-neutral-400 first-letter:text-8xl
-        first-letter:float-left first-letter:mr-3 first-letter:font-sans first-line:uppercase
-        first-line:tracking-widest first-letter:font-bold
+        max-w-3xl mx-auto prose prose-headings:text-neutral-400
+        prose-headings:font-oswald prose-headings:font-light prose-headings:tracking-wide text-neutral-400
       "
     >
-      Sixtone lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores maiores ipsum
-      consequatur eius repellendus aut amet eveniet ad? Modi dolores officia impedit ab error fugit
-      dolore, laudantium consequuntur ipsam placeat. Lorem ipsum, dolor sit amet consectetur
-      adipisicing elit. Nostrum, autem omnis optio dolorem saepe similique id et recusandae nemo,
-      laudantium illum doloremque. Rem iure porro adipisci, sed nemo deserunt facere?
-      <br /> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae fugiat laboriosam
-      tempore natus reprehenderit consequatur eum, cumque ad voluptatum at, debitis corrupti cupiditate
-      aliquam maxime laborum aut accusamus sequi nulla!
+      {@html content}
     </article>
 
     <div class="flex flex-wrap justify-evenly">

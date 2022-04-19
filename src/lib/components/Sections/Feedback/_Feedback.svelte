@@ -6,11 +6,12 @@
   import { fly } from 'svelte/transition';
   import { onMount } from 'svelte';
 
-  export let componentData;
-  export let feedbacks;
+  export let feedbackData;
 
+  const { id, name, subtitle, bgImage, feedbacks } = feedbackData;
   let current = 0;
   const changeInterval = 5000;
+
   const changeSlide = () => {
     if (current === feedbacks.length - 1) {
       current = 0;
@@ -26,7 +27,10 @@
 </script>
 
 <SectionWrapper
-  {componentData}
+  {id}
+  {name}
+  {subtitle}
+  {bgImage}
   backgroundClass="bg-[position:17%] bg-[length:242%] sm:bg-cover sm:bg-top"
 >
   <div class="relative flex-1 flex items-center">

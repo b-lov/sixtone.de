@@ -4,11 +4,12 @@
   import DynamicBackground from './DynamicBackground.svelte';
   import SectionHeading from './SectionHeading.svelte';
 
-  export let componentData;
+  export let id;
+  export let name;
+  export let subtitle = '';
+  export let bgImage = '';
   export let bgOpacity = 0.6;
   export let hasHeading = true;
-
-  const { id, bgImage, name, subtitle } = componentData;
 </script>
 
 <section

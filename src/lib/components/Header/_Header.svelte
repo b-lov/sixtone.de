@@ -23,13 +23,13 @@
     <div class="flex items-center gap-8 justify-end grow basis-0">
       <button
         on:click={() => {
-          document.getElementById('Kontakt').scrollIntoView({
+          document.getElementById('contact').scrollIntoView({
             behavior: 'smooth'
           });
         }}
       >
         <Icons
-          name="Kontakt"
+          name="contact"
           size={1.6}
           class="hidden sm:block fill-[none] stroke-2 stroke-neutral-300 hover:scale-125 hover:stroke-accent transition"
         />

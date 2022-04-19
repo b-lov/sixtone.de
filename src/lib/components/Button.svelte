@@ -4,7 +4,7 @@
 
 <button
   class="
-    font-oswald text-white uppercase text-xs border-[1px] p-3 px-4 tracking-widest
+    font-oswald font-light text-white uppercase text-xs border-[1px] p-3 px-4 tracking-widest
     rounded-sm border-neutral-400 hover:bg-accent hover:border-accent transition
     duration-300
   "

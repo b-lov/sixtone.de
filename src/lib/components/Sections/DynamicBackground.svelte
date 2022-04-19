@@ -7,6 +7,6 @@
 
 <div
   class="absolute w-full h-full bg-fixed bg-no-repeat bg-black {$$props.class}"
-  style="background-image: url(images/backgrounds/{bgImage}.jpg);"
+  style="background-image: url({bgImage});"
 />
 <DotOverlay bgOpacity={opacity} />
