@@ -18,8 +18,8 @@
   <div class="relative flex flex-col gap-16">
     <article
       class="
-        max-w-3xl mx-auto whitespace-normal prose prose-headings:text-neutral-400
-        prose-headings:font-oswald prose-headings:font-normal text-neutral-400
+        max-w-3xl mx-auto prose prose-headings:text-neutral-400
+        prose-headings:font-oswald prose-headings:font-light prose-headings:tracking-wide text-neutral-400
       "
     >
       {@html content}
