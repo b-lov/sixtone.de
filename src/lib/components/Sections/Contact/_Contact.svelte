@@ -98,6 +98,7 @@
         id="Tel"
         placeholder="Tel (optional)"
         pattern={String.raw`[0-9+\s]{4,}`}
+        maxlength="25"
         title="Die Eingabe muss mindestens 4 Zeichen enthalten. Nur Zahlen und '+' erlaubt."
         bind:value={$messageData.tel}
       />
@@ -109,6 +110,7 @@
       cols="30"
       rows="8"
       placeholder="Nachricht"
+      maxlength="700"
       class="w-full"
       required
     />
