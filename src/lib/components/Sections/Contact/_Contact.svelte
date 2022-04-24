@@ -26,14 +26,6 @@
     if (browser) localStorage.setItem('messageData', JSON.stringify(data));
   });
 
-  const clearMessageData = () => {
-    $messageData.name = $messageData.mail = $messageData.tel = $messageData.text = '';
-  };
-
-  const trimMessageData = () => {
-    Object.keys(messageData).forEach((k) => (messageData[k] = messageData[k].trim()));
-  };
-
   const sendToTelegram = async () => {
     const chat_id = import.meta.env.VITE_PUBLIC_TELEGRAM_CHAT_ID;
     const botId = import.meta.env.VITE_PUBLIC_TELEGRAM_BOT_ID;
@@ -55,7 +47,7 @@
         setTimeout(() => {
           successNotification = false;
         }, notificationTimeout);
-        clearMessageData();
+        $messageData.name = $messageData.mail = $messageData.tel = $messageData.text = '';
       })
       .catch((error) => {
         failureNotification = true;
@@ -133,7 +125,14 @@
         akzeptiere den Datenschutz.
       </label>
     </div>
-    <Button text="senden" on:mousedown={trimMessageData} />
+    <Button
+      text="senden"
+      on:mousedown={() => {
+        Object.keys($messageData).forEach(
+          (k) => ($messageData[k] = $messageData[k].trim().replace(/\s+/g, ' '))
+        );
+      }}
+    />
   </form>
 </SectionWrapper>
 {#if successNotification || failureNotification}
