@@ -78,9 +78,9 @@
         id="Name"
         placeholder="Name"
         required
-        pattern={String.raw`[A-zÀ-ž.\s]{2,}`}
+        pattern={String.raw`[A-zÀ-ž\u0400-\u04ff\s.-]{2,}`}
         maxlength="25"
-        title="Die Eingabe muss mindestens 2 Zeichen enthalten. Nur Groß- und Kleinbuchstaben erlaubt."
+        title="Die Eingabe muss mindestens 2 Zeichen enthalten. Nur Buchstaben sowie '-' und  '.' erlaubt."
         bind:value={$messageData.name}
       />
       <input
