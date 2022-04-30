@@ -1,3 +1,9 @@
+<!-- in case of much spam try these:
+https://www.nfriedly.com/techblog/2009/11/how-to-build-a-spam-free-contact-forms-without-captchas/
+https://mags.ai/blog/add-recaptcha-to-a-svelte-app/
+https://rodneylab.com/sveltekit-hcaptcha-contact-form/
+https://www.youtube.com/watch?v=mBXEnakkUIM
+https://css-tricks.com/headless-form-submission-with-the-wordpress-rest-api/ -->
 <script lang="ts">
   import { fly } from 'svelte/transition';
   import { browser } from '$app/env';
