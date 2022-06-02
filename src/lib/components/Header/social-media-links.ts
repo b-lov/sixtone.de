@@ -1,18 +1,18 @@
 export default [
   {
     name: 'youtube',
-    href: 'https://youtube.com'
+    href: 'https://www.youtube.com/user/TheMwmworld'
   },
   {
     name: 'instagram',
-    href: 'https://instagram.com'
+    href: 'https://www.instagram.com/sixtone_band/'
   },
   {
     name: 'facebook',
-    href: 'https://facebook.com'
+    href: 'https://www.facebook.com/Sixtone/'
   },
   {
-    name: 'twitter',
-    href: 'https://twitter.com'
+    name: 'vkontakte',
+    href: 'https://vk.com/sixtone'
   }
 ];
