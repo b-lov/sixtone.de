@@ -21,9 +21,9 @@
       {href}
       target="_blank"
       rel="noopener noreferrer"
-      class="h-16 w-16 md:w-14 flex items-center justify-center bg-neutral-800 md:bg-transparent"
+      class="h-16 w-16 md:w-14 flex items-center justify-center bg-neutral-800 md:bg-transparent group"
     >
-      <Icons {name} size={1.2} class="fill-neutral-300 hover:fill-accent transition-colors" />
+      <Icons {name} size={1.2} class="fill-neutral-300 group-hover:fill-accent transition-colors" />
     </a>
   {/each}
   <button
