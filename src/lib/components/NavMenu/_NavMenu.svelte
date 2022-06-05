@@ -3,6 +3,7 @@
   import { navMenuOpen } from '$lib/stores';
   import { clickOutside } from '$lib/actions';
   import NavMenuLink from './NavMenuLink.svelte';
+  import LanguagePicker from './LanguagePicker.svelte';
 
   export let sectionData: { [key: string]: Record<'name' | 'id', string> };
 </script>
@@ -18,6 +19,9 @@
       {#each Object.entries(sectionData) as [_, { id, name }], i}
         <NavMenuLink {id} {name} flyDelay={i * 50} />
       {/each}
+    </div>
+    <div class="absolute bottom-0">
+      <LanguagePicker />
     </div>
   </nav>
 {/if}
