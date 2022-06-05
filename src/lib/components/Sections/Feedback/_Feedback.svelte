@@ -3,7 +3,6 @@
   import SlideText from './SlideText.svelte';
   import SlideAuthor from './SlideAuthor.svelte';
   import SectionWrapper from '../SectionWrapper.svelte';
-  import { fly } from 'svelte/transition';
   import { onMount } from 'svelte';
 
   export let feedbackData;
@@ -33,21 +32,42 @@
   {bgImage}
   backgroundClass="bg-[position:17%] bg-[length:242%] sm:bg-cover sm:bg-top"
 >
-  <div class="relative flex-1 flex items-center">
-    <div class="w-full flex flex-col items-center">
-      <div class="grid grid-cols-1 grid-rows-1">
-        {#key current}
-          <div
-            class="row-start-1 col-start-1"
-            in:fly={{ x: window.innerWidth }}
-            out:fly={{ x: -window.innerWidth }}
-          >
-            <SlideAuthor picture={feedbacks[current].picture} name={feedbacks[current].name} />
-            <SlideText text={feedbacks[current].text} />
-          </div>
-        {/key}
-      </div>
-      <SlideDots dots={feedbacks} {current} />
+  <div class="relative">
+    <div class="grid overflow-hidden">
+      {#each feedbacks as feedback, i}
+        <div class="row-span-full col-span-full {i === current ? 'appear' : 'disappear'}">
+          <SlideAuthor picture={feedback.picture} name={feedback.name} />
+          <SlideText text={feedback.text} />
+        </div>
+      {/each}
     </div>
+    <SlideDots dots={feedbacks} {current} />
   </div>
 </SectionWrapper>
+
+<style lang="postcss">
+  .appear {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  .disappear {
+    animation: fadeOut 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+</style>

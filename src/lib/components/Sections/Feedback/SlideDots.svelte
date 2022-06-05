@@ -1,10 +1,9 @@
 <script lang="ts">
-  //
   export let dots;
   export let current;
 </script>
 
-<div class="flex gap-2 items-center">
+<div class="flex gap-2 items-center justify-center">
   {#each dots as dot, i}
     <div
       class="
