@@ -6,4 +6,4 @@ export const navMenuOpen = writable(true);
 
 export const bigHeader = writable();
 
-export const displayLanguage = writable('de');
+export const currentLanguage = writable('de');
