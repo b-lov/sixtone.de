@@ -3,7 +3,7 @@
   import { currentLanguage } from '$lib/stores';
 
   let expanded = false;
-  const languages = ['de', 'ru', 'en'];
+  const languages = ['DE', 'RU', 'EN'];
 </script>
 
 <div
