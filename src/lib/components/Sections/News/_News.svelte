@@ -10,7 +10,6 @@
 </script>
 
 <SectionWrapper {id} {name} {subtitle}>
-  <!-- <NewsCard newsItem={news[0]} /> -->
   <div class="flex flex-wrap justify-center gap-4">
     {#each news as newsItem}
       <NewsCard {newsItem} />
