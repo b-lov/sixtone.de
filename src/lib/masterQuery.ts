@@ -1,6 +1,6 @@
 export default `
   query masterQuery {
-    sections: abschnitte {
+    sections: abschnitte(first: 100, where: {language: DE}) {
       nodes {
         id: elementId
         subtitle: untertitel
