@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { mouseXPositionInElement } from '$lib/utils/utils';
+  import { mouseXPositionInElement } from '$lib/utils';
 
   import Icons from '$lib/components/Icons.svelte';
 

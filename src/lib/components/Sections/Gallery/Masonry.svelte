@@ -3,7 +3,7 @@
   import createLayout from './justified-layout';
   import elementResizeEvent, { unbind } from 'element-resize-event';
   import LazyImage from './LazyImage.svelte';
-  import { debounce } from '$lib/utils/utils';
+  import { debounce } from '$lib/utils';
   import Photoswipe from './Photoswipe.svelte';
 
   export let rawImages = [];

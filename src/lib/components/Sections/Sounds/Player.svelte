@@ -4,7 +4,7 @@
 </script>
 
 <script lang="ts">
-  import { secondsToMMSS } from '$lib/utils/utils';
+  import { secondsToMMSS } from '$lib/utils';
   import { onMount } from 'svelte';
 
   import VolumeControls from './VolumeControls.svelte';
