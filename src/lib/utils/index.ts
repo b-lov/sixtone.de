@@ -1,5 +1,3 @@
-import type { Writable } from 'svelte/store';
-
 export function round(n: number): number {
   if (Number.EPSILON === undefined) {
     // @ts-expect-error: polyfill for cases when EPSILON doesn't exist (IE)
@@ -39,16 +37,4 @@ export const mouseXPositionInElement = (event: MouseEvent, element: HTMLElement)
 
 export const secondsToMMSS = (time: number): string => {
   return new Date(1000 * time).toISOString().substring(14, 19);
-};
-
-export const getWpData = (locale: string, store: Writable<unknown>): void => {
-  fetch(`/wp-data-${locale}.json`)
-    .then((res) => res.json())
-    .then((data) => {
-      store.set(data);
-    })
-    .catch((err) => {
-      console.log(err);
-      return;
-    });
 };
