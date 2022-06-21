@@ -4,7 +4,9 @@
   export let member;
 
   const { name, role, photo } = member;
+
   let hovering = false;
+
   const randomFly = () => {
     return (Math.random() - 0.5) * 2000;
   };
