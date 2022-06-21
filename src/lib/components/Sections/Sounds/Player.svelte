@@ -41,7 +41,6 @@
         {title}
       </h1>
       {#if !paused}
-        <!-- content here -->
         <PlayingIndicator />
       {/if}
     </div>
