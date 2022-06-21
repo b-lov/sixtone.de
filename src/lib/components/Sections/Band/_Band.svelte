@@ -2,9 +2,10 @@
   import SectionWrapper from '../SectionWrapper.svelte';
   import MemberCard from './MemberCard.svelte';
 
-  export let bandData;
+  export let data;
+  export let members;
 
-  const { id, name, bgImage, subtitle, members, content } = bandData;
+  const { id, name, bgImage, subtitle, content } = data;
 </script>
 
 <SectionWrapper

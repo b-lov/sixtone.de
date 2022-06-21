@@ -4,9 +4,9 @@
   import Caption from './Caption.svelte';
   import ScrollIndicator from './ScrollIndicator.svelte';
 
-  export let homeData;
+  export let data;
 
-  const { id, name, bgImage } = homeData;
+  const { id, name, bgImage } = data;
 </script>
 
 <SectionWrapper
