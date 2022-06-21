@@ -5,14 +5,12 @@
   import ScrollIndicator from './ScrollIndicator.svelte';
 
   export let data;
-
-  const { id, name, bgImage } = data;
 </script>
 
 <SectionWrapper
-  {id}
-  {bgImage}
-  {name}
+  id={data.id}
+  bgImage={data.bgImage}
+  name={data.name}
   hasHeading={false}
   sectionClass="pb-0"
   backgroundClass="bg-[position:45%] bg-[length:200%] sm:bg-cover"
