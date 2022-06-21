@@ -1,6 +1,6 @@
 <script>
-  import { getWpData } from '$lib/utils';
-  import { rawData, currentLocale } from '$lib/stores/wp-store';
+  import { getPageContent } from '$lib/utils/api';
+  import { currentLocale } from '$lib/stores/page-content';
   import Icons from '../Icons.svelte';
 
   let expanded = false;
@@ -21,7 +21,7 @@
         on:click={() => {
           currentLocale.set(language);
           expanded = false;
-          getWpData($currentLocale, rawData);
+          getPageContent();
         }}
       >
         <Icons name={`flag_${language}`} size={2} />
