@@ -1,38 +1,28 @@
 <script lang="ts">
-  import { getContext, onMount } from 'svelte';
-  import { getWpData } from '$lib/utils';
-  import { currentLocale, rawData, sectionsStore } from '$lib/stores/wp-store';
+  import { getPageContent } from '$lib/utils/api';
+  import {
+    sectionsData,
+    membersData,
+    tracksData,
+    imagesData,
+    feedbacksData,
+    partnersData
+  } from '$lib/stores/page-content';
+  import { onMount } from 'svelte';
   import * as Sections from '$lib/components/Sections';
 
-  const sectionData: { [key: string]: any } = getContext('sectionData');
-
-  const {
-    homeData,
-    bandData,
-    soundsData,
-    galleryData,
-    newsData,
-    feedbackData,
-    partnersData,
-    contactData
-  } = sectionData;
-
-  onMount(async () => {
-    getWpData($currentLocale, rawData);
+  onMount(() => {
+    getPageContent();
   });
 </script>
 
-{#each $sectionsStore as section}
-  {section.name}
-{/each}
-<Sections.Home {homeData} />
-<Sections.Band {bandData} />
-<Sections.Sounds {soundsData} />
-<Sections.Gallery {galleryData} />
-<!-- TODO: get insta token with new password -->
-{#if newsData.news}
-  <Sections.News {newsData} />
+{#if $sectionsData}
+  <Sections.Home data={$sectionsData.home} />
+  <Sections.Band data={$sectionsData.band} members={$membersData} />
+  <Sections.Sounds data={$sectionsData.sounds} tracks={$tracksData} />
+  <Sections.Gallery data={$sectionsData.gallery} images={$imagesData} />
+  <!-- <Sections.News {newsData} /> -->
+  <Sections.Feedback data={$sectionsData.feedback} feedbacks={$feedbacksData} />
+  <Sections.Partners data={$sectionsData.partners} partners={$partnersData} />
+  <Sections.Contact data={$sectionsData.contact} />
 {/if}
-<Sections.Feedback {feedbackData} />
-<Sections.Partners {partnersData} />
-<Sections.Contact {contactData} />
