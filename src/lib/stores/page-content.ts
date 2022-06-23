@@ -15,7 +15,9 @@ export const rawData = writable({
 export const sectionsDataArr = derived(rawData, ($rawData) => {
   const data = $rawData.sections.nodes;
   if (data.length) {
-    return data;
+    return data.map((data) => {
+      return { id: data.id, name: data.name };
+    });
   }
 });
 
@@ -36,6 +38,45 @@ export const membersData = derived(rawData, ($rawData) => {
     return data.map(({ name, role, featuredImage }) => {
       return { name, role, photo: featuredImage.node.photo };
     });
-    // return data;
+  }
+});
+
+export const tracksData = derived(rawData, ($rawData) => {
+  const data = $rawData.sounds.nodes;
+  if (data.length) {
+    return data;
+  }
+});
+
+export const imagesData = derived(rawData, ($rawData) => {
+  const data = $rawData.images.nodes;
+  if (data.length) {
+    return data.map(({ title, src, mediaDetails }) => {
+      return {
+        title,
+        src,
+        msrc: mediaDetails.filteredSizes[0].msrc,
+        w: mediaDetails.w,
+        h: mediaDetails.h
+      };
+    });
+  }
+});
+
+export const feedbacksData = derived(rawData, ($rawData) => {
+  const data = $rawData.feedbacks.nodes;
+  if (data.length) {
+    return data.map(({ name, text, featuredImage }) => {
+      return { name, text, picture: featuredImage.node.picture };
+    });
+  }
+});
+
+export const partnersData = derived(rawData, ($rawData) => {
+  const data = $rawData.partners.nodes;
+  if (data.length) {
+    return data.map(({ name, featuredImage, link }) => {
+      return { name, picture: featuredImage.node.picture, link };
+    });
   }
 });
