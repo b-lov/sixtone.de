@@ -11,9 +11,9 @@ https://css-tricks.com/headless-form-submission-with-the-wordpress-rest-api/ -->
   import Button from '$lib/components/Button.svelte';
   import SectionWrapper from '../SectionWrapper.svelte';
 
-  export let contactData;
+  export let data;
 
-  const { id, name, subtitle, bgImage } = contactData;
+  // const { id, name, subtitle, bgImage } = contactData;
 
   let successNotification = false;
   let failureNotification = false;
@@ -66,10 +66,10 @@ https://css-tricks.com/headless-form-submission-with-the-wordpress-rest-api/ -->
 </script>
 
 <SectionWrapper
-  {id}
-  {name}
-  {subtitle}
-  {bgImage}
+  id={data.id}
+  name={data.name}
+  subtitle={data.subtitle}
+  bgImage={data.bgImage}
   containerClass="max-w-4xl"
   backgroundClass="bg-[position:38%] bg-[length:230%] sm:bg-cover"
 >

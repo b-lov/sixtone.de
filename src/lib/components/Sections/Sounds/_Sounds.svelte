@@ -2,12 +2,11 @@
   import SectionWrapper from '../SectionWrapper.svelte';
   import Player from './Player.svelte';
 
-  export let soundsData;
-
-  const { id, name, subtitle, tracks } = soundsData;
+  export let data;
+  export let tracks;
 </script>
 
-<SectionWrapper {id} {name} {subtitle} sectionClass="pb-0">
+<SectionWrapper id={data.id} name={data.name} subtitle={data.subtitle} sectionClass="pb-0">
   <div class="flex items-center justify-center">
     <div class="w-full grid grid-cols-5 grid-rows-1 gap-3">
       <div

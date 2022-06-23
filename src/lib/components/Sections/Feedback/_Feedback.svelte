@@ -5,9 +5,9 @@
   import SectionWrapper from '../SectionWrapper.svelte';
   import { onMount } from 'svelte';
 
-  export let feedbackData;
+  export let data;
+  export let feedbacks;
 
-  const { id, name, subtitle, bgImage, feedbacks } = feedbackData;
   let current = 0;
   const changeInterval = 5000;
 
@@ -26,10 +26,10 @@
 </script>
 
 <SectionWrapper
-  {id}
-  {name}
-  {subtitle}
-  {bgImage}
+  id={data.id}
+  name={data.name}
+  subtitle={data.subtitle}
+  bgImage={data.bgImage}
   backgroundClass="bg-[position:17%] bg-[length:242%] sm:bg-cover sm:bg-top"
 >
   <div class="relative">
