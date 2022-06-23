@@ -2,10 +2,9 @@
   import { fly } from 'svelte/transition';
   import { navMenuOpen } from '$lib/stores';
   import { clickOutside } from '$lib/actions';
+  import { sectionsDataArr } from '$lib/stores/page-content';
   import NavMenuLink from './NavMenuLink.svelte';
   import LanguagePicker from './LanguagePicker.svelte';
-
-  export let sectionData: { [key: string]: Record<'name' | 'id', string> };
 </script>
 
 <svelte:window on:keydown={(event) => event.key === 'Escape' && navMenuOpen.set(false)} />
@@ -16,9 +15,11 @@
     class="fixed flex justify-end items-center bg-black/70 right-0 h-full z-10"
   >
     <div class="flex flex-col items-start px-12 gap-2">
-      {#each Object.entries(sectionData) as [_, { id, name }], i}
-        <NavMenuLink {id} {name} flyDelay={i * 50} />
-      {/each}
+      {#if $sectionsDataArr}
+        {#each $sectionsDataArr as section, i}
+          <NavMenuLink id={section.id} name={section.name} flyDelay={i * 50} />
+        {/each}
+      {/if}
     </div>
     <div class="absolute bottom-0">
       <LanguagePicker />
