@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { currentLocale } from '$lib/stores/page-content';
+
   export let newsItem;
 
   const {
@@ -13,7 +15,7 @@
     children
   } = newsItem;
 
-  const date = new Date(timestamp).toLocaleDateString('de-DE', {
+  $: date = new Date(timestamp).toLocaleDateString($currentLocale, {
     weekday: 'long',
     year: 'numeric',
     month: 'long',
