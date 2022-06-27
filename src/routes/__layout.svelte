@@ -16,10 +16,11 @@
   use:useViewport={{ rootMargin: '10% 0% -110% 0%' }}
   on:enterViewport={() => bigHeader.set(false)}
   on:exitViewport={() => bigHeader.set(true)}
+  class="flex flex-col min-h-screen"
 >
   <NavMenu />
   <Header />
-  <main class="bg-neutral-900 text-neutral-300 overflow-hidden">
+  <main class="bg-neutral-900 text-neutral-300 overflow-hidden grow">
     <slot />
   </main>
   <Footer />
