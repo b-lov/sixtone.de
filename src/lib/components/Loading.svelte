@@ -1,4 +1,4 @@
-<div class="flex gap-2">
+<div class="flex gap-3">
   {#each [...Array(3).keys()] as dot}
     <div class="dot" style="animation-delay: 0.{dot * 2}s;" />
   {/each}
@@ -15,7 +15,7 @@
     }
     50% {
       opacity: 0.3;
-      transform: scale(1.8);
+      transform: scale(1.5);
     }
     100% {
       transform: scale(1);
