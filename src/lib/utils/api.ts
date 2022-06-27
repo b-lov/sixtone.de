@@ -1,11 +1,12 @@
 import { get } from 'svelte/store';
-import { rawData, currentLocale } from '$lib/stores/page-content';
+import { rawData, currentLocale, instaData } from '$lib/stores/page-content';
 import wordpressQuery from '$lib/utils/query';
 
-const endpoint = import.meta.env.VITE_PUBLIC_WORDPRESS_API_URL;
+const WPendpoint = import.meta.env.VITE_PUBLIC_WORDPRESS_API_URL;
+const instaEndpoint: string = import.meta.env.VITE_PUBLIC_INSTAGRAM_API_URL;
 
 export async function getPageContent(): Promise<void> {
-  fetch(endpoint, {
+  fetch(WPendpoint, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -15,6 +16,17 @@ export async function getPageContent(): Promise<void> {
     .then((res) => res.json())
     .then((data) => {
       rawData.set(data.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+export async function getInstaMedia(): Promise<void> {
+  fetch(instaEndpoint)
+    .then((res) => res.json())
+    .then((data) => {
+      instaData.set(data.data);
     })
     .catch((err) => {
       console.log(err);
