@@ -12,6 +12,8 @@ export const rawData = writable({
   partners: { nodes: [] }
 });
 
+export const instaData = writable([]);
+
 export const sectionsDataArr = derived(rawData, ($rawData) => {
   const data = $rawData.sections.nodes;
   if (data.length) {
