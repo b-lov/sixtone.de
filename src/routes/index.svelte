@@ -1,12 +1,13 @@
 <script lang="ts">
-  import { getPageContent } from '$lib/utils/api';
+  import { getInstaMedia, getPageContent } from '$lib/utils/api';
   import {
     sectionsData,
     membersData,
     tracksData,
     imagesData,
     feedbacksData,
-    partnersData
+    partnersData,
+    instaData
   } from '$lib/stores/page-content';
   import { onMount } from 'svelte';
   import * as Sections from '$lib/components/Sections';
@@ -14,6 +15,7 @@
 
   onMount(() => {
     getPageContent();
+    getInstaMedia();
   });
 </script>
 
@@ -22,7 +24,9 @@
   <Sections.Band data={$sectionsData.band} members={$membersData} />
   <Sections.Sounds data={$sectionsData.sounds} tracks={$tracksData} />
   <Sections.Gallery data={$sectionsData.gallery} images={$imagesData} />
-  <!-- <Sections.News {newsData} /> -->
+  {#if $instaData.length}
+    <Sections.News data={$sectionsData.news} news={$instaData} />
+  {/if}
   <Sections.Feedback data={$sectionsData.feedback} feedbacks={$feedbacksData} />
   <Sections.Partners data={$sectionsData.partners} partners={$partnersData} />
   <Sections.Contact data={$sectionsData.contact} />
