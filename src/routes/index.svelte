@@ -10,6 +10,7 @@
   } from '$lib/stores/page-content';
   import { onMount } from 'svelte';
   import * as Sections from '$lib/components/Sections';
+  import Loading from '$lib/components/Loading.svelte';
 
   onMount(() => {
     getPageContent();
@@ -25,4 +26,8 @@
   <Sections.Feedback data={$sectionsData.feedback} feedbacks={$feedbacksData} />
   <Sections.Partners data={$sectionsData.partners} partners={$partnersData} />
   <Sections.Contact data={$sectionsData.contact} />
+{:else}
+  <div class="absolute top-1/2 left-1/2 -ml-8">
+    <Loading />
+  </div>
 {/if}
