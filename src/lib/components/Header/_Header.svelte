@@ -23,7 +23,11 @@
     <div class="flex items-center gap-8 justify-end grow basis-0">
       <button
         on:click={() => {
-          document.getElementById('contact').scrollIntoView({
+          window.scrollTo({
+            top:
+              document.getElementById('contact').getBoundingClientRect().top +
+              window.pageYOffset -
+              64,
             behavior: 'smooth'
           });
         }}
