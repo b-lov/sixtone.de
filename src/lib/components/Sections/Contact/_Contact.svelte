@@ -128,7 +128,7 @@ https://css-tricks.com/headless-form-submission-with-the-wordpress-rest-api/ -->
         class="p-2 mr-1 text-accent focus:ring-0 focus:ring-offset-0"
         required
       />
-      <label for="datenschutz" class="text-sm">
+      <label for="datenschutz" class="text-sm cursor-pointer select-none">
         {labels[$currentLocale].privacy}
       </label>
     </div>
