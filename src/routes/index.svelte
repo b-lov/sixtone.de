@@ -1,6 +1,7 @@
 <script lang="ts">
   import { getInstaMedia, getPageContent } from '$lib/utils/api';
   import {
+    currentLocale,
     sectionsData,
     membersData,
     tracksData,
@@ -14,6 +15,7 @@
   import Loading from '$lib/components/Loading.svelte';
 
   onMount(() => {
+    currentLocale.set(localStorage.getItem('userLocale') || 'DE');
     getPageContent();
     getInstaMedia();
   });

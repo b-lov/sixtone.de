@@ -20,6 +20,7 @@
       <button
         on:click={() => {
           currentLocale.set(language);
+          localStorage.setItem('userLocale', language);
           expanded = false;
           getPageContent();
         }}
