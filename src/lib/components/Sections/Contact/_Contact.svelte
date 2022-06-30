@@ -8,12 +8,12 @@ https://css-tricks.com/headless-form-submission-with-the-wordpress-rest-api/ -->
   import { fly } from 'svelte/transition';
   import { browser } from '$app/env';
   import { writable } from 'svelte/store';
+  import { currentLocale } from '$lib/stores/page-content';
+  import labels from './labels';
   import Button from '$lib/components/Button.svelte';
   import SectionWrapper from '../SectionWrapper.svelte';
 
-  export let contactData;
-
-  const { id, name, subtitle, bgImage } = contactData;
+  export let data;
 
   let successNotification = false;
   let failureNotification = false;
@@ -66,10 +66,10 @@ https://css-tricks.com/headless-form-submission-with-the-wordpress-rest-api/ -->
 </script>
 
 <SectionWrapper
-  {id}
-  {name}
-  {subtitle}
-  {bgImage}
+  id={data.id}
+  name={data.name}
+  subtitle={data.subtitle}
+  bgImage={data.bgImage}
   containerClass="max-w-4xl"
   backgroundClass="bg-[position:38%] bg-[length:230%] sm:bg-cover"
 >
@@ -82,7 +82,7 @@ https://css-tricks.com/headless-form-submission-with-the-wordpress-rest-api/ -->
         type="text"
         name="Name"
         id="Name"
-        placeholder="Name"
+        placeholder={labels[$currentLocale].name}
         required
         pattern={String.raw`[A-zÀ-ž\u0400-\u04ff\s.-]{2,}`}
         maxlength="25"
@@ -93,7 +93,7 @@ https://css-tricks.com/headless-form-submission-with-the-wordpress-rest-api/ -->
         type="email"
         name="Email"
         id="Email"
-        placeholder="E-Mail"
+        placeholder={labels[$currentLocale].email}
         required
         bind:value={$messageData.mail}
         on:keydown={(e) => e.code === 'Space' && e.preventDefault()}
@@ -102,7 +102,7 @@ https://css-tricks.com/headless-form-submission-with-the-wordpress-rest-api/ -->
         type="tel"
         name="Tel"
         id="Tel"
-        placeholder="Tel (optional)"
+        placeholder={labels[$currentLocale].tel}
         pattern={String.raw`[0-9+\s]{4,}`}
         maxlength="25"
         title="Die Eingabe muss mindestens 4 Zeichen enthalten. Nur Zahlen und '+' erlaubt."
@@ -115,7 +115,7 @@ https://css-tricks.com/headless-form-submission-with-the-wordpress-rest-api/ -->
       id="Message"
       cols="30"
       rows="8"
-      placeholder="Nachricht"
+      placeholder={labels[$currentLocale].message}
       maxlength="700"
       class="w-full"
       required
@@ -128,13 +128,12 @@ https://css-tricks.com/headless-form-submission-with-the-wordpress-rest-api/ -->
         class="p-2 mr-1 text-accent focus:ring-0 focus:ring-offset-0"
         required
       />
-      <label for="datenschutz" class="text-sm">
-        Ich stimme der Verarbeitung meiner Daten zum Zweck der Kontaktaufnahme durch Sixtone zu und
-        akzeptiere den Datenschutz.
+      <label for="datenschutz" class="text-sm cursor-pointer select-none">
+        {labels[$currentLocale].privacy}
       </label>
     </div>
     <Button
-      text="senden"
+      text={labels[$currentLocale].sendButton}
       on:mousedown={() => {
         Object.keys($messageData).forEach(
           (k) => ($messageData[k] = $messageData[k].trim().replace(/\s+/g, ' '))

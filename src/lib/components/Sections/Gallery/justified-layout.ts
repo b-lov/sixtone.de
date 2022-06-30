@@ -1,5 +1,5 @@
 import { dijkstra } from './dijkstra';
-import { ratio, scaleHeight, scaleWidth } from '$lib/utils/utils';
+import { ratio, scaleHeight, scaleWidth } from '$lib/utils';
 
 function getRowHeight(row, containerWidth, padding) {
   const rowWidth = containerWidth - (row.length - 1) * padding;

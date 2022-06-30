@@ -1,16 +1,13 @@
 <!-- TODO: import from instagram -->
 <script lang="ts">
   import SectionWrapper from '../SectionWrapper.svelte';
-  // import news from './news';
   import NewsCard from './NewsCard.svelte';
 
-  export let newsData;
-
-  const { id, name, subtitle, news } = newsData;
+  export let data;
+  export let news;
 </script>
 
-<SectionWrapper {id} {name} {subtitle}>
-  <!-- <NewsCard newsItem={news[0]} /> -->
+<SectionWrapper id={data.id} name={data.name} subtitle={data.subtitle}>
   <div class="flex flex-wrap justify-center gap-4">
     {#each news as newsItem}
       <NewsCard {newsItem} />

@@ -1,11 +1,3 @@
-<script lang="ts" context="module">
-  export async function load({ fetch }) {
-    const res = await fetch('/data');
-    const data = await res.json();
-    return { props: { sectionData: data.sectionData } };
-  }
-</script>
-
 <script lang="ts">
   import '../app.css';
   import Footer from '$lib/components/Footer.svelte';
@@ -13,10 +5,6 @@
   import NavMenu from '$lib/components/NavMenu/_NavMenu.svelte';
   import { bigHeader } from '$lib/stores';
   import { useViewport } from '$lib/actions';
-  import { setContext } from 'svelte';
-
-  export let sectionData;
-  setContext('sectionData', sectionData);
 </script>
 
 <svelte:head>
@@ -28,10 +16,11 @@
   use:useViewport={{ rootMargin: '10% 0% -110% 0%' }}
   on:enterViewport={() => bigHeader.set(false)}
   on:exitViewport={() => bigHeader.set(true)}
+  class="flex flex-col min-h-screen"
 >
-  <NavMenu {sectionData} />
+  <NavMenu />
   <Header />
-  <main class="bg-neutral-900 text-neutral-300 overflow-hidden">
+  <main class="bg-neutral-900 text-neutral-300 overflow-hidden grow">
     <slot />
   </main>
   <Footer />

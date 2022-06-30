@@ -1,7 +1,7 @@
 <!-- TODO: buffer feedback, see:
 https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/buffering_seeking_time_ranges -->
 <script lang="ts">
-  import { mouseXPositionInElement, secondsToMMSS } from '$lib//utils/utils';
+  import { mouseXPositionInElement, secondsToMMSS } from '$lib/utils';
   import Tooltip from './Tooltip.svelte';
 
   export let duration: number;

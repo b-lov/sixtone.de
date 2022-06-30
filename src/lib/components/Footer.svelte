@@ -2,8 +2,17 @@
   const year: number = new Date().getFullYear();
 </script>
 
-<div class="flex justify-center p-4 bg-neutral-800">
-  <span class="text-neutral-500">Copyright © {year} Sixtone</span>
+<div class="flex justify-center p-4 bg-neutral-800 text-neutral-500 text-sm">
+  <span class="text-center">
+    Copyright © {year} Sixtone •
+    <a href="/impressum.txt" target="_blank" class="hover:text-neutral-300 transition">
+      Impressum
+    </a>
+    •
+    <a href="/datenschutz.txt" target="_blank" class="hover:text-neutral-300 transition">
+      Datenschutz
+    </a>
+  </span>
 </div>
 
 <style lang="postcss">

@@ -2,16 +2,15 @@
   import SectionWrapper from '../SectionWrapper.svelte';
   import MemberCard from './MemberCard.svelte';
 
-  export let bandData;
-
-  const { id, name, bgImage, subtitle, members, content } = bandData;
+  export let data;
+  export let members;
 </script>
 
 <SectionWrapper
-  {id}
-  {name}
-  {subtitle}
-  {bgImage}
+  id={data.id}
+  name={data.name}
+  subtitle={data.subtitle}
+  bgImage={data.bgImage}
   backgroundClass="bg-[position:45%] bg-[length:200%] sm:bg-cover"
   bgOpacity={0.9}
 >
@@ -22,7 +21,7 @@
         prose-headings:font-oswald prose-headings:font-light prose-headings:tracking-wide text-neutral-400
       "
     >
-      {@html content}
+      {@html data.content}
     </article>
 
     <div class="flex flex-wrap justify-evenly">

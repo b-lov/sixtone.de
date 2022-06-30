@@ -3,8 +3,8 @@
 
   export let member;
 
-  const { name, role, photo } = member;
   let hovering = false;
+
   const randomFly = () => {
     return (Math.random() - 0.5) * 2000;
   };
@@ -23,13 +23,12 @@
         class="absolute rounded-full w-full h-full top-0 bg-accent/40"
       />
     {/if}
-    <!-- src="images/band/third/{member.photo}.png" -->
     <img
-      src={photo}
-      alt="{name} Photo"
+      src={member.photo}
+      alt="{member.name} Photo"
       class="w-72 h-72 object-contain rounded-full object-top shadow-lg relative"
     />
   </div>
-  <h1 class="font-oswald text-2xl text-neutral-200">{name}</h1>
-  <h2 class="text-neutral-400 text-sm">{role}</h2>
+  <h1 class="font-oswald text-2xl text-neutral-200">{member.name}</h1>
+  <h2 class="text-neutral-400 text-sm">{member.role}</h2>
 </div>

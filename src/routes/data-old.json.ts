@@ -1,7 +1,8 @@
-import query from '$lib/masterQuery';
+import wordpressQuery from '$lib/utils/query';
 
 const endpoint: string = import.meta.env.VITE_PUBLIC_WORDPRESS_API_URL;
 const instaEndpoint: string = import.meta.env.VITE_PUBLIC_INSTAGRAM_API_URL;
+const query = wordpressQuery('DE');
 
 export async function get(): Promise<Record<string, unknown>> {
   const rawSectionData = await fetch(endpoint, {
