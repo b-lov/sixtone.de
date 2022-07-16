@@ -35,7 +35,7 @@
 </script>
 
 <a href={permalink} target="_blank" class="group">
-  <div class="max-w-xs w-80 relative">
+  <div class="max-w-xs h-80 w-80 relative overflow-hidden">
     <img src={image_url} alt="" srcset="" />
     <div
       class="
