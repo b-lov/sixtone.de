@@ -8,7 +8,7 @@
     imagesData,
     feedbacksData,
     partnersData,
-    instaData
+    // instaData
   } from '$lib/stores/page-content';
   import { onMount } from 'svelte';
   import * as Sections from '$lib/components/Sections';
@@ -26,9 +26,9 @@
   <Sections.Band data={$sectionsData.band} members={$membersData} />
   <Sections.Sounds data={$sectionsData.sounds} tracks={$tracksData} />
   <Sections.Gallery data={$sectionsData.gallery} images={$imagesData} />
-  {#if $instaData.length}
+  <!-- {#if $instaData.length}
     <Sections.News data={$sectionsData.news} news={$instaData} />
-  {/if}
+  {/if} -->
   <Sections.Feedback data={$sectionsData.feedback} feedbacks={$feedbacksData} />
   <Sections.Partners data={$sectionsData.partners} partners={$partnersData} />
   <Sections.Contact data={$sectionsData.contact} />
